@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your E-Sys MAX licence: activate, find, move</title>
+<meta name="description" content="How to activate an E-Sys MAX licence, get it again after a Windows reinstall, move it to a new PC, and how the weekly licence check works.">
+<link rel="canonical" href="https://esysmax.com/licence">
+<meta name="theme-color" content="#0b0c0f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-Sys MAX">
+<meta property="og:title" content="Your E-Sys MAX licence: activate, find, move">
+<meta property="og:description" content="How to activate an E-Sys MAX licence, get it again after a Windows reinstall, move it to a new PC, and how the weekly licence check works.">
+<meta property="og:url" content="https://esysmax.com/licence">
+<meta property="og:image" content="https://esysmax.com/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/assets/img/favicon-64.png">
+<link rel="apple-touch-icon" href="/assets/img/emblem-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=1790897330">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="E-Sys MAX home"><img src="/assets/img/logo-dark.png" srcset="/assets/img/logo-dark.png 1x, /assets/img/logo-dark@2x.png 2x" width="224" height="40" alt="E-Sys MAX"></a>
+    <nav class="nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/licence" aria-current="page">Licence</a><a href="/#faq">FAQ</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
+      <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Licence</span>
+    <h1>Your licence</h1>
+    <p>Activate it, get it back after a reinstall, or move it to a new PC.</p>
+  </div>
+</section>
+<section class="page">
+  <div class="wrap cols">
+    <div>
+      <div class="panel" id="activate">
+        <h2 style="font-size:1.7rem">Activate</h2>
+        <ol class="how">
+          <li>Open the E-Sys MAX launcher, <b>Help &gt; Licence</b>.</li>
+          <li>Paste the licence (the text that starts with <span class="mono">EMAX1.</span>) into box 1.</li>
+          <li>Press <b>Activate</b>. The launcher shows what the licence is and until when.</li>
+        </ol>
+      </div>
+      <form class="panel" id="find-form" novalidate>
+        <h2 style="font-size:1.7rem">Find my licence</h2>
+        <p class="muted">Bought by card? Your e-mail and PC ID give your licence back, for example after a Windows reinstall.</p>
+        <div class="field"><label for="find-email">E-mail of your order</label><input type="email" id="find-email" autocomplete="email" placeholder="you@example.com"></div>
+        <div class="field"><label for="find-pc">PC ID</label><input class="mono" type="text" id="find-pc" autocomplete="off" spellcheck="false" placeholder="Help &gt; Licence &gt; Copy this PC's ID"></div>
+        <div class="actions"><button class="btn btn-primary" type="submit">Find my licence</button><a class="btn btn-ghost" data-telegram-from="#find-pc" href="https://t.me/EsysMaxbot">Bought in Telegram? Ask the bot</a></div>
+        <div class="note" id="find-note" role="status" aria-live="polite"></div>
+        <div id="find-licence" hidden style="margin-top:16px">
+          <div class="licence-box"></div>
+          <div class="actions" style="margin-top:12px"><button class="btn btn-primary" type="button" data-copy-licence>Copy licence</button></div>
+        </div>
+      </form>
+      <div class="panel" id="move">
+        <h2 style="font-size:1.7rem">New PC</h2>
+        <p class="muted">A licence is for one PC. On the new PC, open <b>Help &gt; Licence &gt; Get a licence on Telegram</b> and choose <b>Move my licence to this PC</b>. Once approved you get the licence for the new PC in Telegram; the old PC stops at its next licence check.</p>
+        <p class="muted">Your licence is tied to the motherboard: a Windows reinstall, a new SSD or more RAM do not need a move.</p>
+      </div>
+    </div>
+    <aside class="panel">
+      <h3>The weekly check</h3>
+      <p class="muted">When the launcher starts with internet, it confirms the licence with the licence server in a second. After that E-Sys MAX works offline for up to <b>7 days</b>. After 7 days without a check it asks for the internet once.</p>
+      <h3 style="margin-top:24px">What is sent</h3>
+      <p class="muted">The licence, the PC ID, short codes made from the PC's hardware (never the serial numbers themselves) and the E-Sys MAX version. Nothing about your car. See <a href="/privacy">privacy</a>.</p>
+      <h3 style="margin-top:24px">Help</h3>
+      <p class="muted">Write to <a href="https://t.me/EsysMaxbot">@EsysMaxbot</a> on Telegram.</p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="/assets/img/logo-dark.png" width="170" height="30" alt="E-Sys MAX" style="height:30px;width:auto;margin-bottom:14px">
+        <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+      </div>
+      <div><h4>Product</h4><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/#faq">FAQ</a></div>
+      <div><h4>Licence</h4><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></div>
+      <div><h4>Legal</h4><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="https://t.me/EsysMaxbot">Contact</a></div>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year>2026</span> E-Sys MAX. All rights reserved.</span>
+      <span>Not affiliated with BMW AG. BMW and E-Sys are trademarks of BMW AG. E-Sys and PSdZData are not included.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.js?v=1790897330" defer></script>
+</body>
+</html>
