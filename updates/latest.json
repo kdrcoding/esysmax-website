@@ -1,0 +1,9 @@
+{
+  "product": "E-Sys MAX",
+  "version": "1.2.23",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.23/E-Sys-Max-1.2.23-win-x64.msi",
+  "sha256": "9873D62BBC57E96DADC72E0B1CB31C49BC05EDEC533B39F62C540195FA847358",
+  "size": 57535123,
+  "notes": "The licence is now confirmed online once a week (works offline up to 7 days). Buy by card from Help \u003E Licence.",
+  "published": "2026-10-01"
+}
