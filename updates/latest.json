@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.33",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.33/E-Sys-Max-1.2.33-win-x64.msi",
-  "sha256": "240CA702925CC77C9C93213C7C7E5A0D1FD52A4BF9C64A82AC0B2A48FB30C7F1",
-  "size": 57783268,
-  "notes": "Three plans: 1 month, 1 year or lifetime, and renew or upgrade from the app. Write to us without Telegram from Help \u003E Licence. Fault scan shows the confirmed faults of modules with very long lists. Clearer SVT lines in dark mode, a bigger CAFD list, and smaller fixes.",
+  "version": "1.2.34",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.34/E-Sys-Max-1.2.34-win-x64.msi",
+  "sha256": "E2CFE916A289ABDCE71F86FD013647672D45116AF06F3191D33E807DB2E41276",
+  "size": 57795556,
+  "notes": "New in Fault scan: What does a code mean? Type a code from an OBD-II reader or a garage (like P0420) or a few words (like misfire) and see what it means, over 1,100 codes including BMW engine codes. The Scan and Close buttons are always visible again.",
   "published": "2026-10-02"
 }
