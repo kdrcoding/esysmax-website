@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.38",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.38/E-Sys-Max-1.2.38-win-x64.msi",
-  "sha256": "A5BC90832D9C0D05C233155DF287F8ABDD25792FF5A8C3B2520DC089C55EF062",
-  "size": 58307781,
-  "notes": "Stronger licence checks: answers from the licence server must be signed for this PC, so a fake or blocked server can\u0027t keep the app running. A free trial is now checked online each time E-Sys starts and gets its car\u0027s setting names from the server. Clear faults and Restart module double-check the car\u0027s VIN first.",
+  "version": "1.2.39",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.39/E-Sys-Max-1.2.39-win-x64.msi",
+  "sha256": "A6F7E7BDCC9CA24D596C3E1E4902A298FC828C62D22AA5DD27B7DBEFE6DCC0B7",
+  "size": 58336453,
+  "notes": "Cheat sheets are now English only and show each tweak once: Korean, Chinese and French descriptions are translated, and the same change from several sheets or module versions is one row. New cheats: iPhone ringtone over the car speakers (more head units) and a louder lock/unlock beep.",
   "published": "2026-10-02"
 }
