@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.24",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.24/E-Sys-Max-1.2.24-win-x64.msi",
-  "sha256": "1B733EEEF862DEAE26C36C343E80B70819CEA389B6C86CC3FB830D603FBF2723",
-  "size": 57563795,
-  "notes": "Free trial mode is now shown clearly, and a trial works on one car. Fixes from a full code review.",
+  "version": "1.2.25",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.25/E-Sys-Max-1.2.25-win-x64.msi",
+  "sha256": "21A2FBB11EB83B87290BB905BE1F18B0BB3FF0AA7DBDB6DF43672A8FADC26C7F",
+  "size": 57598008,
+  "notes": "New Terms of Service: please read and accept them at the next start. Legal texts under Help \u003E Legal.",
   "published": "2026-10-02"
 }
