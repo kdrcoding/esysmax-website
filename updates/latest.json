@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.36",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.36/E-Sys-Max-1.2.36-win-x64.msi",
-  "sha256": "7E0FB5314477843EAF8A7CE1B1E32C614D895022C374820542EDD9600C28C1AE",
-  "size": 57820105,
-  "notes": "Safer: Clear faults and Restart module first ask the car for its VIN and do nothing on another car. Backups never overwrite each other or mix two cars. Licence: a launcher left open checks again before starting E-Sys, update downloads no longer hang, and many smaller fixes.",
+  "version": "1.2.37",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.37/E-Sys-Max-1.2.37-win-x64.msi",
+  "sha256": "5752AE05339FC8649A3FB117B39FEB2B83814976E1B2244CBDABA98F9B8C8234",
+  "size": 58283205,
+  "notes": "New installer look. Updates now finish on slow connections (they could stop after 10 minutes). On a free trial, E-Sys no longer pauses while the trial is tied to the car. Clearer message when Clear faults is refused.",
   "published": "2026-10-02"
 }
