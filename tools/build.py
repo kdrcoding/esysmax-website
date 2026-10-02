@@ -11,7 +11,7 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://esysmax.com'
 
-NAV = [('Features', '/#features'), ('How it works', '/#how'), ('Pricing', '/#pricing'), ('Download', '/download'), ('Licence', '/licence'), ('FAQ', '/#faq')]
+NAV = [('Features', '/#features'), ('How to buy', '/#buy'), ('Pricing', '/#pricing'), ('Guide', '/guide'), ('Download', '/download'), ('Licence', '/licence'), ('FAQ', '/#faq')]
 
 ICONS = {
     'check': '<path d="M20 6 9 17l-5-5"/>',
@@ -35,6 +35,11 @@ ICONS = {
     'windows': '<path d="M3 5.5 10 4.5v7H3zM11 4.3 21 3v8.5H11zM3 12.5h7v7L3 18.5zM11 12.5h10V21l-10-1.3z"/>',
     'plug': '<path d="M9 2v6M15 2v6M6 8h12v4a6 6 0 0 1-12 0zM12 18v4"/>',
     'pc': '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>',
+    'flag': '<path d="M4 21V4M4 4h13l-2 4 2 4H4"/>',
+    'lock': '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+    'dollar': '<path d="M12 2v20M17 6H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+    'chat': '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/>',
+    'key': '<circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.7-8.7M17 6l3 3M15 8l2 2"/>',
 }
 
 
@@ -87,8 +92,9 @@ LAYOUT = '''<!doctype html>
       <div>
         <img src="/assets/img/logo-dark.png" width="170" height="30" alt="E-Sys MAX" style="height:30px;width:auto;margin-bottom:14px">
         <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+        <p style="margin-top:10px">A US business: KDR Coding, Los Angeles, California. Prices in US dollars.</p>
       </div>
-      <div><h4>Product</h4><a href="/#features">Features</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/#faq">FAQ</a></div>
+      <div><h4>Product</h4><a href="/#features">Features</a><a href="/#buy">How to buy</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a><a href="/#faq">FAQ</a></div>
       <div><h4>Licence</h4><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></div>
       <div><h4>Legal</h4><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></div>
     </div>
