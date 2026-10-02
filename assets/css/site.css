@@ -457,5 +457,7 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
   .site-head.open .head-cta .btn { flex: 1; font-size: 1rem; }
   /* buttons in a row become full-width, easy-to-hit buttons */
   .hero-cta .btn, .actions .btn { flex: 1 1 100%; }
+  /* long labels ("Bought in Telegram? Ask the bot") wrap instead of running off a 320 px screen */
+  .actions .btn { white-space: normal; text-align: center; line-height: 1.25; }
   .hero-cta { margin: 26px 0 16px; }
 }

@@ -24,6 +24,9 @@ import subprocess
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = 'https://esysmax.com'
 NOT_LISTED = ('404', 'thank-you')  # not in the sitemap (and noindex)
+# The Terms version a card buyer accepts: {terms} in a page becomes it (the buy form's data-terms, which
+# site.js sends with the checkout). Keep it the same as "Version ..." at the top of src/pages/terms.html.
+TERMS_VERSION = '2026-10-03'
 
 NAV = [('Features', '/#features'), ('How to buy', '/#buy'), ('Pricing', '/#pricing'), ('Guide', '/guide'), ('Download', '/download'), ('Licence', '/licence'), ('FAQ', '/#faq')]
 
@@ -267,7 +270,8 @@ def render(name, text):
     url = SITE + path
     noindex = meta.get('robots', '').startswith('noindex')
     nav = ''.join('<a href="{0}"{1}>{2}</a>'.format(href, ' aria-current="page"' if href == path else '', label) for label, href in NAV)
-    body = label_tables(re.sub(r'\{icon:(\w+)\}', lambda m: icon(m.group(1)), body.strip('\n')))
+    body = re.sub(r'\{icon:(\w+)\}', lambda m: icon(m.group(1)), body.strip('\n')).replace('{terms}', TERMS_VERSION)
+    body = label_tables(body)
     if noindex:
         seo = '<meta name="robots" content="{0}">\n'.format(meta['robots'])
         og_url = ''
@@ -297,6 +301,8 @@ def last_changed(path):
 def main():
     build_assets()
     pages = os.path.join(ROOT, 'src', 'pages')
+    if 'Version ' + TERMS_VERSION not in read(os.path.join('src', 'pages', 'terms.html')):
+        print('  warning: TERMS_VERSION ({0}) is not the version at the top of src/pages/terms.html'.format(TERMS_VERSION))
     built = []
     for file in sorted(os.listdir(pages)):
         if file.endswith('.html'):

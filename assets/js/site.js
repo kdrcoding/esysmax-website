@@ -4,6 +4,7 @@
 
   var API = 'https://licence.esysmax.com/api/';
   var BOT = 'EsysMaxbot';
+  var SERVER_PROBLEM = 'The licence server had a problem; please try again in a minute.';
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
 
   function pcId(text) {
@@ -31,7 +32,14 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams(body).toString()
-    }).then(function (r) { return r.json().then(function (j) { j.status = r.status; return j; }); });
+    }).then(function (r) {
+      // An answer that is not JSON (an error page from the server) means the server was reached but had a problem;
+      // only a failed connection ends in the caller's catch (not reachable, check the internet).
+      return r.json().then(function (j) {
+        if (!j || typeof j !== 'object') throw new Error();
+        j.status = r.status; return j;
+      }).catch(function () { return { ok: false, status: r.status, reason: SERVER_PROBLEM }; });
+    });
   }
   function telegramLink(pc) { return 'https://t.me/' + BOT + (pc ? '?start=' + pc : ''); }
   function copy(text, button) {
@@ -108,6 +116,9 @@
     var updateTelegram = function () { if (tg) tg.href = telegramLink(pcId(pcInput.value)); };
     pcInput.addEventListener('input', updateTelegram);
     updateTelegram();
+    var buyButton = $('button[type="submit"]', buy);
+    // Back from Stripe: the browser may show this page from its cache, with the button still busy.
+    window.addEventListener('pageshow', function (e) { if (e.persisted) busy(buyButton, false); });
     buy.addEventListener('submit', function (event) {
       event.preventDefault();
       var pc = pcId(pcInput.value);
@@ -118,10 +129,11 @@
         say(note, 'Please tick the three boxes: the Terms, the coding risk and the delivery of your licence.', 'bad');
         return;
       }
-      var button = $('button[type="submit"]', buy);
+      var button = buyButton;
       busy(button, true, 'Opening secure payment');
       say(note, '');
-      post('checkout', { machine: pc, plan: chosen.value, terms: '2026-10-03', risk: 'yes', delivery: 'yes' }).then(function (answer) {
+      // The Terms version comes from the page (tools/build.py writes it from one place).
+      post('checkout', { machine: pc, plan: chosen.value, terms: buy.getAttribute('data-terms') || '', risk: 'yes', delivery: 'yes' }).then(function (answer) {
         if (answer.ok && answer.url) { location.href = answer.url; return; }
         busy(button, false);
         say(note, answer.reason || 'The payment page could not be opened. Buy on Telegram instead.', 'bad');
@@ -146,7 +158,11 @@
           showLicence($('#order-licence'), answer.certificate);
           return;
         }
-        if (answer.pending && tries++ < 40) { say(state, answer.reason); setTimeout(ask, 3000); return; }
+        if (answer.pending) {
+          if (tries++ < 40) { say(state, answer.reason); setTimeout(ask, 3000); return; }
+          say(state, 'Your payment is still being processed. Refresh this page in a minute, or ask @' + BOT + '.');
+          return;
+        }
         say(state, answer.reason || 'The order could not be read. Refresh this page in a minute.', 'bad');
       }).catch(function () {
         if (tries++ < 40) { setTimeout(ask, 3000); return; }
@@ -162,6 +178,10 @@
     var findNote = $('#find-note');
     find.addEventListener('submit', function (event) {
       event.preventDefault();
+      // A new search starts clean: no licence from the last search under a new answer.
+      var found = $('#find-licence');
+      if (found) { found.hidden = true; var box = $('.licence-box', found); if (box) box.textContent = ''; }
+      say(findNote, '');
       var pc = pcId($('#find-pc').value);
       var email = $('#find-email').value.trim();
       if (!pc || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { say(findNote, 'Enter the e-mail of your order and your PC ID.', 'bad'); return; }
