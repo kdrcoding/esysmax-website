@@ -5,3 +5,10 @@ Thumbs.db
 *.pem
 *.key
 .env*
+
+# Collected setting names never go to git (Help improve names files, the names pack, name folders).
+names-*.txt
+esys-max-names.txt
+contribution*.txt
+*.emx
+fdl-names/
