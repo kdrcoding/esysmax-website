@@ -29,6 +29,7 @@ NAV = [('Features', '/#features'), ('How to buy', '/#buy'), ('Pricing', '/#prici
 
 ICONS = {
     'check': '<path d="M20 6 9 17l-5-5"/>',
+    'x': '<path d="M18 6 6 18M6 6l12 12"/>',
     'spark': '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M5.6 18.4l2.8-2.8M15.6 8.4l2.8-2.8"/>',
     'list': '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
     'car': '<path d="M5 17h14M6 17l-1-5 2-5h10l2 5-1 5"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/><path d="M5 12h14"/>',
@@ -213,8 +214,9 @@ SOFTWARE = {
     'downloadUrl': SITE + '/download', 'screenshot': SITE + '/assets/img/vehicle-order.jpg',
     'publisher': {'@id': SITE + '/#organization'},
     'offers': [
-        {'@type': 'Offer', 'name': 'E-Sys MAX licence, 1 year', 'price': '59.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=year', 'seller': {'@id': SITE + '/#organization'}},
-        {'@type': 'Offer', 'name': 'E-Sys MAX licence, lifetime', 'price': '99.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=lifetime', 'seller': {'@id': SITE + '/#organization'}},
+        {'@type': 'Offer', 'name': '1 month', 'price': '39.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=month', 'seller': {'@id': SITE + '/#organization'}},
+        {'@type': 'Offer', 'name': '1 year', 'price': '59.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=year', 'seller': {'@id': SITE + '/#organization'}},
+        {'@type': 'Offer', 'name': 'Lifetime', 'price': '99.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=lifetime', 'seller': {'@id': SITE + '/#organization'}},
     ],
 }
 

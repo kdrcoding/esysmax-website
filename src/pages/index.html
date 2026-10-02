@@ -109,12 +109,12 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
     <div class="buy-steps">
       <div class="buy-step reveal"><div class="icon">{icon:download}</div><span class="num">Step</span><h3>Download and try</h3><p>Install E-Sys MAX and start the free 3-day trial from Help &gt; Licence. No card.</p></div>
       <div class="buy-step reveal"><div class="icon">{icon:pc}</div><span class="num">Step</span><h3>Press Buy by card</h3><p>In the launcher: Help &gt; Licence &gt; Buy by card. Your PC ID is filled in for you.</p></div>
-      <div class="buy-step reveal"><div class="icon">{icon:card}</div><span class="num">Step</span><h3>Pay securely</h3><p>Choose 1 year ($59) or lifetime ($99) and pay on Stripe's secure checkout.</p></div>
+      <div class="buy-step reveal"><div class="icon">{icon:card}</div><span class="num">Step</span><h3>Pay securely</h3><p>Choose 1 month ($39), 1 year ($59) or lifetime ($99) and pay on Stripe's secure checkout.</p></div>
       <div class="buy-step reveal"><div class="icon">{icon:key}</div><span class="num">Step</span><h3>Paste and go</h3><p>Your licence appears right after paying. Copy it, paste it into the launcher, press Activate.</p></div>
     </div>
     <div class="us-strip">
       <div class="us-item reveal">{icon:flag}<div><b>US business</b><span>KDR Coding, Los Angeles, California</span></div></div>
-      <div class="us-item reveal">{icon:dollar}<div><b>Prices in US dollars</b><span>One price, no subscription traps</span></div></div>
+      <div class="us-item reveal">{icon:dollar}<div><b>Prices in US dollars</b><span>One-time payments, nothing renews by itself</span></div></div>
       <div class="us-item reveal">{icon:lock}<div><b>Secure checkout</b><span>Cards processed by Stripe; we never see your card</span></div></div>
       <div class="us-item reveal">{icon:chat}<div><b>Real support</b><span>Telegram @EsysMaxbot, Pacific Time</span></div></div>
     </div>
@@ -131,34 +131,38 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow">Pricing</span>
-      <h2>One price, every feature</h2>
-      <p>Every plan has everything. A licence is for one PC; moving to a new laptop is always possible.</p>
+      <h2>Every feature, you choose how long</h2>
+      <p>Every plan has every feature. Each one is a single payment that never renews by itself, and the longer you choose, the less you pay per month.</p>
     </div>
-    <div class="pricing">
+    <div class="pricing ladder">
       <div class="plan reveal">
-        <h3>Free trial</h3>
-        <div class="price">$0 <small>3 days</small></div>
-        <p class="sub">Everything, on your PC and your car, for three days. No card.</p>
-        <ul class="ticks"><li>All features</li><li>All setting names</li><li>One car: the first car you connect</li><li>One trial per PC</li></ul>
-        <a class="btn btn-ghost" href="/download">Download &amp; try</a>
+        <h3>1 month</h3>
+        <div class="price">$39 <small>30 days</small></div>
+        <p class="sub">Every feature for 30 days. A one-time payment, no auto-renew.</p>
+        <ul class="ticks"><li>All features</li><li>Updates while it runs</li><li>Support on Telegram</li></ul>
+        <p class="limit">{icon:x} Stays on this PC (cannot be moved)</p>
+        <a class="btn btn-ghost" href="/buy?plan=month">Buy 1 month</a>
       </div>
       <div class="plan reveal">
         <h3>1 year</h3>
-        <div class="price">$59 <small>/ year</small></div>
-        <p class="sub">A full year of E-Sys MAX on one PC.</p>
-        <ul class="ticks"><li>All features</li><li>All updates during the year</li><li>New setting names as they come</li><li>Move to a new PC</li></ul>
+        <div class="price">$59 <small>365 days</small></div>
+        <p class="sub">Only $4.92 a month: about as much as 1.5 months of the monthly plan.</p>
+        <ul class="ticks"><li>All features</li><li>Updates during the year</li><li>Support on Telegram</li></ul>
+        <p class="limit">{icon:x} Stays on this PC (cannot be moved)</p>
         <a class="btn btn-ghost" href="/buy?plan=year">Buy 1 year</a>
       </div>
       <div class="plan best reveal">
         <span class="tag">Best value</span>
         <h3>Lifetime</h3>
         <div class="price">$99 <small>once</small></div>
-        <p class="sub">Pay once, keep E-Sys MAX on one PC.</p>
-        <ul class="ticks"><li>All features</li><li>All future updates</li><li>New setting names as they come</li><li>Move to a new PC</li></ul>
+        <p class="sub">Pay once, use it for good. Costs less than 3 months of the monthly plan, and less than 2 years of the 1-year plan.</p>
+        <ul class="ticks"><li>All features</li><li>Every future update</li><li>Never renew</li><li>Priority support on Telegram</li></ul>
+        <p class="limit yes">{icon:check} Move to a new PC whenever you need</p>
         <a class="btn btn-primary" href="/buy?plan=lifetime">Buy lifetime</a>
       </div>
     </div>
-    <p class="fine">Pay by card (Stripe) on this site, or in Telegram with <a href="https://t.me/EsysMaxbot">@EsysMaxbot</a>. Prices in US dollars. Refunds for unused licences: see the <a href="/refunds">Refund Policy</a>. Vehicle coding is at your own risk (<a href="/disclaimer">disclaimer</a>).</p>
+    <p class="trial-line">Not sure yet? <a href="/download">Try every feature free for 3 days</a> on your own PC and car, no card needed.</p>
+    <p class="fine">Pay by card (Stripe) on this site, or in Telegram with <a href="https://t.me/EsysMaxbot">@EsysMaxbot</a>. Prices in US dollars. To renew a 1-month or 1-year licence, buy again for the same PC: the new period starts when the current one ends, so no days are lost. Refunds for unused licences: see the <a href="/refunds">Refund Policy</a>. Vehicle coding is at your own risk (<a href="/disclaimer">disclaimer</a>).</p>
   </div>
 </section>
 
@@ -171,9 +175,11 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
       <details><summary>Can it change my car without me knowing?</summary><div class="answer"><p>No. Reading, searching, history and reports never write to the car. A write only happens when you press Yes in E-Sys or in E-Sys MAX, and No is always the default.</p></div></details>
       <details><summary>What is in the free trial?</summary><div class="answer"><p>Every feature for 3 days, on one car: the first car you connect with E-Sys MAX becomes the trial's car. E-Sys itself keeps working on every car; a licence unlocks E-Sys MAX on all of them. One trial per PC.</p></div></details>
       <details><summary>Does it need the internet?</summary><div class="answer"><p>Coding does not. The licence is checked online when the launcher starts, and E-Sys MAX keeps working offline for up to 7 days after the last check. Connect once a week and you never notice it.</p></div></details>
-      <details><summary>I reinstall Windows or change the SSD. Do I lose the licence?</summary><div class="answer"><p>No. Your licence is tied to the motherboard, not to Windows: a Windows reinstall, a new SSD or more RAM keep it. If your licence text is gone after a reinstall, get it again on the <a href="/licence">licence page</a> or from @EsysMaxbot.</p></div></details>
-      <details><summary>I bought a new laptop. Can I move my licence?</summary><div class="answer"><p>Yes. Open Help &gt; Licence &gt; Get a licence on Telegram on the new laptop and choose "Move my licence to this PC". Once approved, the licence works on the new laptop and the old one stops.</p></div></details>
-      <details><summary>Can I use one licence on two PCs?</summary><div class="answer"><p>A licence is for one PC at a time. For a second laptop, buy a second licence, or move your licence between them when you need to.</p></div></details>
+      <details><summary>I reinstall Windows or change the SSD. Do I lose the licence?</summary><div class="answer"><p>No. Your licence is tied to the motherboard, not to Windows: a Windows reinstall, a new SSD or more RAM keep it, whatever the plan. That is the same PC, not a move. If your licence text is gone after a reinstall, get it again on the <a href="/licence">licence page</a> or from @EsysMaxbot.</p></div></details>
+      <details><summary>I bought a new laptop. Can I move my licence?</summary><div class="answer"><p>With a lifetime licence, yes, whenever you need: open Help &gt; Licence &gt; Get a licence on Telegram on the new laptop and choose "Move my licence to this PC". Once approved, the licence works on the new laptop and the old one stops. A 1-month or 1-year licence stays on the PC it was bought for and cannot be moved. 1-year licences bought before 3 October 2026 can still be moved.</p></div></details>
+      <details><summary>Can I use one licence on two PCs?</summary><div class="answer"><p>No, a licence is for one PC at a time. For a second PC, buy a second licence. A lifetime licence can be moved to a new PC when you change computers; a 1-month or 1-year licence stays on the PC it was bought for.</p></div></details>
+      <details><summary>Does a licence renew by itself?</summary><div class="answer"><p>No. Every licence is a one-time payment and nothing is charged again: 1 month lasts 30 days, 1 year lasts 365 days, lifetime never ends. To keep going after a 1-month or 1-year licence, buy again for the same PC. If the current licence is still running, the new period starts when it ends, so you lose no days.</p></div></details>
+      <details><summary>Which plan should I choose?</summary><div class="answer"><p>For one job on one car, 1 month is enough. For a year of coding, 1 year costs $59, about as much as 1.5 months of the monthly plan. If you will still be coding after that, lifetime ($99) costs less than 2 years of the 1-year plan ($118) and less than 3 months of the monthly plan ($117). It never needs renewing, gets every future update and priority support, and is the only plan you can move to a new PC.</p></div></details>
       <details><summary>Do you sell to customers in the USA?</summary><div class="answer"><p>Yes. E-Sys MAX is made by KDR Coding, a business in Los Angeles, California. Prices are in US dollars, payment is by card through Stripe, and the licence is delivered instantly, so there is nothing to ship. Sales tax may apply where required.</p></div></details>
       <details><summary>How do I pay?</summary><div class="answer"><p>By card on the <a href="/buy">buy page</a> (secure Stripe checkout; your licence appears right after paying), or in Telegram with <a href="https://t.me/EsysMaxbot">@EsysMaxbot</a>.</p></div></details>
     </div>
