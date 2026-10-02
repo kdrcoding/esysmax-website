@@ -108,10 +108,14 @@
       var chosen = $('input[name="plan"]:checked', buy);
       if (!pc) { say(note, 'Enter your PC ID: 32 letters and digits from the E-Sys MAX launcher, Help > Licence > Copy this PC\'s ID.', 'bad'); pcInput.focus(); return; }
       if (!chosen) { say(note, 'Choose 1 year or lifetime.', 'bad'); return; }
+      if (!$('#accept-terms').checked || !$('#accept-risk').checked || !$('#accept-delivery').checked) {
+        say(note, 'Please tick the three boxes: the Terms, the coding risk and the delivery of your licence.', 'bad');
+        return;
+      }
       var button = $('button[type="submit"]', buy);
       busy(button, true, 'Opening secure payment');
       say(note, '');
-      post('checkout', { machine: pc, plan: chosen.value }).then(function (answer) {
+      post('checkout', { machine: pc, plan: chosen.value, terms: '2026-10-02', risk: 'yes', delivery: 'yes' }).then(function (answer) {
         if (answer.ok && answer.url) { location.href = answer.url; return; }
         busy(button, false);
         say(note, answer.reason || 'The payment page could not be opened. Buy on Telegram instead.', 'bad');

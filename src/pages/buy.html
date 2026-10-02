@@ -23,6 +23,11 @@ description: Buy an E-Sys MAX licence: 1 year for $59 or lifetime for $99. Pay b
           <input type="radio" name="plan" id="plan-lifetime" value="lifetime" checked><label for="plan-lifetime"><strong>$99</strong><span>Lifetime, all future updates</span></label>
         </div>
       </div>
+      <div class="field consent">
+        <label class="check"><input type="checkbox" id="accept-terms" required> <span>I have read and accept the <a href="/terms" target="_blank">Terms of Service and Licence Agreement</a>, the <a href="/privacy" target="_blank">Privacy Policy</a> and the <a href="/refunds" target="_blank">Refund Policy</a>, and I am at least 18.</span></label>
+        <label class="check"><input type="checkbox" id="accept-risk" required> <span>I understand that coding a vehicle is at my own risk and that I am responsible for every change (<a href="/disclaimer" target="_blank">Vehicle Coding Disclaimer</a>).</span></label>
+        <label class="check"><input type="checkbox" id="accept-delivery" required> <span>I ask for my licence to be delivered right away, and I understand that once it is activated it can no longer be refunded or withdrawn.</span></label>
+      </div>
       <div class="actions">
         <button class="btn btn-primary btn-lg" type="submit">{icon:card} Pay by card</button>
         <a class="btn btn-ghost btn-lg" id="buy-telegram" href="https://t.me/EsysMaxbot">{icon:send} Buy in Telegram</a>

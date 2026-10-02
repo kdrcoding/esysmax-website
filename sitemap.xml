@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://esysmax.com/buy</loc></url>
+  <url><loc>https://esysmax.com/contact</loc></url>
+  <url><loc>https://esysmax.com/disclaimer</loc></url>
   <url><loc>https://esysmax.com/download</loc></url>
   <url><loc>https://esysmax.com/</loc></url>
   <url><loc>https://esysmax.com/licence</loc></url>
   <url><loc>https://esysmax.com/privacy</loc></url>
+  <url><loc>https://esysmax.com/refunds</loc></url>
   <url><loc>https://esysmax.com/terms</loc></url>
 </urlset>
