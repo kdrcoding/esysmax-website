@@ -175,6 +175,78 @@
     });
   }
 
+  // ------------------------------------------------------------ contact form (for people without Telegram)
+  var contact = $('#contact-form');
+  if (contact) {
+    var cNote = $('#contact-note');
+    var cTopic = $('#c-topic');
+    var cPc = $('#c-pc');
+    var cLicence = $('#c-licence');
+    var cMessage = $('#c-message');
+    var cCount = $('#c-count');
+    var cParams = new URLSearchParams(location.search);
+    var askedLicence = false;
+    if (pcId(cParams.get('pc'))) cPc.value = pcId(cParams.get('pc'));
+    if (/^(question|move|licence)$/.test(cParams.get('topic') || '')) cTopic.value = cParams.get('topic');
+    // A move needs the new PC's ID, and the licence ID or the e-mail of the order.
+    var showTopic = function () {
+      var move = cTopic.value === 'move';
+      $('#c-move-help').hidden = !move;
+      $('#c-pc-opt').textContent = move ? '(of the new PC)' : '(optional)';
+    };
+    var count = function () { cCount.textContent = cMessage.value.length; };
+    cTopic.addEventListener('change', showTopic);
+    cMessage.addEventListener('input', count);
+    cLicence.addEventListener('input', function () { askedLicence = false; });
+    showTopic();
+    count();
+    var fail = function (field, text) {
+      say(cNote, text, 'bad');
+      if (field) { field.setAttribute('aria-invalid', 'true'); field.focus(); }
+    };
+    contact.addEventListener('submit', function (event) {
+      event.preventDefault();
+      contact.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+      var email = $('#c-email').value.trim();
+      var pcText = cPc.value.trim();
+      var pc = pcId(pcText);
+      var licence = cLicence.value.trim().toUpperCase();
+      var message = cMessage.value.trim();
+      var move = cTopic.value === 'move';
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { fail($('#c-email'), 'Enter your e-mail address: we answer by e-mail.'); return; }
+      if (move && !pcText) { fail(cPc, 'For a move, enter the PC ID of the new PC: E-Sys MAX launcher, Help > Licence > Copy this PC\'s ID.'); return; }
+      if (pcText && !pc) { fail(cPc, 'The PC ID is 32 letters and digits: E-Sys MAX launcher, Help > Licence > Copy this PC\'s ID.'); return; }
+      if (licence && !/^[A-Z0-9][A-Z0-9-]{3,39}$/.test(licence)) { fail(cLicence, 'The licence ID looks like EMX-0123456789ABCDEF: Help > Licence in E-Sys MAX.'); return; }
+      if (move && !licence && !askedLicence) {
+        askedLicence = true;
+        fail(cLicence, 'For a move, add your licence ID (Help > Licence in E-Sys MAX). No licence ID at hand? Make sure the e-mail above is the one you ordered with, then press Send again.');
+        return;
+      }
+      if (message.length < 10) { fail(cMessage, 'Please write a little more: at least 10 characters.'); return; }
+      if (message.length > 3000) { fail(cMessage, 'Please keep the message to 3000 characters.'); return; }
+      var button = $('button[type="submit"]', contact);
+      busy(button, true, 'Sending');
+      say(cNote, '');
+      post('contact', {
+        name: $('#c-name').value.trim().slice(0, 60), email: email, machine: pc || '', licence: licence,
+        topic: cTopic.value, message: message, website: $('#c-website').value
+      }).then(function (answer) {
+        busy(button, false);
+        if (answer.ok) {
+          contact.hidden = true;
+          var done = $('#contact-done');
+          done.hidden = false;
+          done.focus();
+          return;
+        }
+        say(cNote, answer.reason || 'Could not send just now. Try again in a minute, or write on Telegram: @' + BOT + '.', 'bad');
+      }).catch(function () {
+        busy(button, false);
+        say(cNote, 'Could not send just now. Try again in a minute, or write on Telegram: @' + BOT + '.', 'bad');
+      });
+    });
+  }
+
   // Telegram links that carry a PC ID typed on the page.
   document.querySelectorAll('[data-telegram-from]').forEach(function (a) {
     var input = $(a.getAttribute('data-telegram-from'));

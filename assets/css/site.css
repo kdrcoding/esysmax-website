@@ -227,12 +227,25 @@ code, .mono { font-family: var(--mono); font-size: 0.92em; }
 
 label { display: block; font-weight: 600; margin-bottom: 7px; font-size: 0.95rem; }
 .hint { color: var(--faint); font-size: 0.87rem; margin-top: 6px; }
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], select, textarea {
   width: 100%; padding: 13px 14px; border-radius: 10px; border: 1px solid var(--line-2);
-  background: var(--bg); color: var(--text); font: 500 1rem var(--body);
+  background: var(--bg); color: var(--text); font: 500 1rem var(--body); min-height: 48px;
 }
 input.mono { font-family: var(--mono); letter-spacing: 0.04em; }
-input:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px var(--orange-soft); }
+textarea { resize: vertical; line-height: 1.5; min-height: 140px; }
+select {
+  -webkit-appearance: none; appearance: none; cursor: pointer; padding-right: 40px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 21px) 50%, calc(100% - 15px) 50%; background-size: 6px 6px; background-repeat: no-repeat;
+}
+[aria-invalid="true"] { border-color: var(--red); }
+label .opt { color: var(--faint); font-weight: 400; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+.field-row .field { min-width: 0; }
+#c-move-help { margin: -4px 0 20px; }
+/* the honeypot field: off screen, real people never see or fill it */
+.hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 .field { margin-bottom: 20px; }
 fieldset.field { border: 0; padding: 0; margin: 0 0 20px; min-width: 0; }
 fieldset.field legend { font-weight: 600; font-size: 0.95rem; padding: 0; margin-bottom: 7px; }
@@ -437,6 +450,7 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
   .foot-h { margin-bottom: 4px; }
 }
 @media screen and (max-width: 560px) {
+  .field-row { grid-template-columns: 1fr; }
   .head-cta { display: none; }
   .menu-toggle { margin-left: auto; }
   .site-head.open .head-cta { display: flex; order: 4; width: 100%; margin: 14px 0 0; }
