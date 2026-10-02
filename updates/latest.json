@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.34",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.34/E-Sys-Max-1.2.34-win-x64.msi",
-  "sha256": "E2CFE916A289ABDCE71F86FD013647672D45116AF06F3191D33E807DB2E41276",
-  "size": 57795556,
-  "notes": "New in Fault scan: What does a code mean? Type a code from an OBD-II reader or a garage (like P0420) or a few words (like misfire) and see what it means, over 1,100 codes including BMW engine codes. The Scan and Close buttons are always visible again.",
+  "version": "1.2.35",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.35/E-Sys-Max-1.2.35-win-x64.msi",
+  "sha256": "2B9707CDA0EB8321F580A6C58BD6313BB2C1031222FA5400A65245D2D9285960",
+  "size": 57807844,
+  "notes": "New: Help improve names (E-Sys MAX menu). Send the setting names E-Sys MAX does not have yet, from older PSdZData on your PC, so everybody gets them. You see the whole file first; never your VIN or coding values. Also: one free trial per car.",
   "published": "2026-10-02"
 }
