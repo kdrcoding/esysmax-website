@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.30",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.30/E-Sys-Max-1.2.30-win-x64.msi",
-  "sha256": "BBBD9F36213F6246B470F98248B3874ABC33D56B8DEC0E94B98DB4F64E9AA829",
-  "size": 57741368,
-  "notes": "New Flash assistant: flash one module or update the whole car step by step. Fixes licence problems on Thai and Persian Windows, a faster licence check, clearer help texts.",
+  "version": "1.2.33",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.33/E-Sys-Max-1.2.33-win-x64.msi",
+  "sha256": "240CA702925CC77C9C93213C7C7E5A0D1FD52A4BF9C64A82AC0B2A48FB30C7F1",
+  "size": 57783268,
+  "notes": "Three plans: 1 month, 1 year or lifetime, and renew or upgrade from the app. Write to us without Telegram from Help \u003E Licence. Fault scan shows the confirmed faults of modules with very long lists. Clearer SVT lines in dark mode, a bigger CAFD list, and smaller fixes.",
   "published": "2026-10-02"
 }
