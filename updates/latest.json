@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.26",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.26/E-Sys-Max-1.2.26-win-x64.msi",
-  "sha256": "E6853C9B69B74C00241196915FF0C24C67EA825083274AA400B44C373AC91AF1",
-  "size": 57716792,
-  "notes": "A cleaner look: new title bar, Help page and licence window.",
+  "version": "1.2.27",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.27/E-Sys-Max-1.2.27-win-x64.msi",
+  "sha256": "979CDBF058410A8097B025A25CAEAB7346BF1785F8FD8F83E3C4101558DBC295",
+  "size": 57737272,
+  "notes": "Licences you get on Telegram now activate by themselves: just restart or press Refresh.",
   "published": "2026-10-02"
 }
