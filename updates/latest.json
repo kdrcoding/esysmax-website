@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.35",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.35/E-Sys-Max-1.2.35-win-x64.msi",
-  "sha256": "2B9707CDA0EB8321F580A6C58BD6313BB2C1031222FA5400A65245D2D9285960",
-  "size": 57807844,
-  "notes": "New: Help improve names (E-Sys MAX menu). Send the setting names E-Sys MAX does not have yet, from older PSdZData on your PC, so everybody gets them. You see the whole file first; never your VIN or coding values. Also: one free trial per car.",
+  "version": "1.2.36",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.36/E-Sys-Max-1.2.36-win-x64.msi",
+  "sha256": "7E0FB5314477843EAF8A7CE1B1E32C614D895022C374820542EDD9600C28C1AE",
+  "size": 57820105,
+  "notes": "Safer: Clear faults and Restart module first ask the car for its VIN and do nothing on another car. Backups never overwrite each other or mix two cars. Licence: a launcher left open checks again before starting E-Sys, update downloads no longer hang, and many smaller fixes.",
   "published": "2026-10-02"
 }
