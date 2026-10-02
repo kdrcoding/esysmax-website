@@ -2,3 +2,10 @@
 updates/latest.json -text
 updates/*.sig -text
 *.msi binary
+# Images, fonts and documents are binary.
+*.png binary
+*.jpg binary
+*.webp binary
+*.ico binary
+*.woff2 binary
+*.pdf binary

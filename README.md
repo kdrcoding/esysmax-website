@@ -15,13 +15,19 @@ The licence server (`licence.esysmax.com`, Vercel) is in the esys-max repository
 
 ## Edit
 
-Pages live in `src/pages/*.html` (a few header lines, `---`, then the body); the shared header and footer in
-`tools/build.py`. After editing:
+Pages live in `src/pages/*.html` (header lines `title` (max 60 characters), `description` (max 155), optional
+`crumb` and `robots`, then `---` and the body); the shared header, footer and structured data (JSON-LD) in
+`tools/build.py`. Styles are in `assets/css/site.css` and `assets/fonts/fonts.css`, the script in `assets/js/site.js`.
+After editing:
 
-    python tools/build.py      # writes the .html pages and sitemap.xml
+    python tools/build.py      # pages, assets/css/site.min.css, assets/js/site.min.js, sitemap.xml, robots.txt
     python tools/serve.py      # preview on http://localhost:8790
 
-Commit the built pages too: Hostinger serves the repository as it is.
+Commit the built files too: Hostinger serves the repository as it is. The pages load the `.min` files, and every
+`/assets/` address gets `?v=<hash of the file>`, so `/assets` can be cached for a year (`.htaccess`).
+
+Images: after changing a screenshot (`assets/img/*.jpg`) or a logo (large originals in `src/img/`), run
+`python tools/images.py` (needs Pillow) to make the WebP and small sizes, then `python tools/build.py`.
 
 ## Updates
 
@@ -35,4 +41,5 @@ itself is attached to a GitHub release; `latest.json` names its address. The lau
   (deploys into `public_html`). Turn on auto-deployment and add Hostinger's webhook URL to the GitHub repository.
 - Cloudflare DNS: `esysmax.com` A record to the Hostinger IP, `www` CNAME to `esysmax.com` (DNS only, so Hostinger
   can issue the SSL certificate); `licence` A record `76.76.21.21` (Vercel, DNS only).
-- `.htaccess`: https, no www, clean addresses (`/buy`), security headers, no caching for the update feed.
+- `.htaccess`: https, no www, clean addresses (`/buy`), security headers, no caching for the update feed,
+  one year for `/assets` (versioned addresses), no-cache for pages.

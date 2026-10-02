@@ -56,10 +56,15 @@
   var head = $('.site-head');
   var toggle = $('.menu-toggle');
   if (toggle && head) {
-    toggle.addEventListener('click', function () {
-      var open = head.classList.toggle('open');
+    var setMenu = function (open) {
+      head.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    };
+    toggle.addEventListener('click', function () { setMenu(!head.classList.contains('open')); });
+    // A tap on a menu link (also /#faq on the home page) closes the menu; so does Escape.
+    head.querySelectorAll('.nav a, .head-cta a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && head.classList.contains('open')) { setMenu(false); toggle.focus(); } });
   }
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
   if ('IntersectionObserver' in window) {
