@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.25",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.25/E-Sys-Max-1.2.25-win-x64.msi",
-  "sha256": "21A2FBB11EB83B87290BB905BE1F18B0BB3FF0AA7DBDB6DF43672A8FADC26C7F",
-  "size": 57598008,
-  "notes": "New Terms of Service: please read and accept them at the next start. Legal texts under Help \u003E Legal.",
+  "version": "1.2.26",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.26/E-Sys-Max-1.2.26-win-x64.msi",
+  "sha256": "E6853C9B69B74C00241196915FF0C24C67EA825083274AA400B44C373AC91AF1",
+  "size": 57716792,
+  "notes": "A cleaner look: new title bar, Help page and licence window.",
   "published": "2026-10-02"
 }
