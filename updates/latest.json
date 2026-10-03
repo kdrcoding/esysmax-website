@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.48",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.48/E-Sys-Max-1.2.48-win-x64.msi",
-  "sha256": "58A0502BB3B1B7260031C6003FAD3C42581146D3C2B4502993D8631B5DFC5F0B",
-  "size": 60097733,
-  "notes": "Security update: E-Sys MAX now checks the real date when E-Sys starts and refuses to run with programs injected into E-Sys, so licences can no longer be stretched or bypassed. Data files are encrypted. Includes 1.2.47: the PSdZ data size is measured once and kept.",
+  "version": "1.2.49",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.49/E-Sys-Max-1.2.49-win-x64.msi",
+  "sha256": "30A152A4B63B9CA1752A446C681135CA316EAC1E0C0E70C21A24F0B0D4365841",
+  "size": 59008197,
+  "notes": "Setting names now come from the E-Sys MAX server for the car you code (a second or two the first time; then kept on this PC and used offline). The names data opens again on E-Sys 3.30 and 3.36. Security: a new names key with every release, given only to active licences.",
   "published": "2026-10-03"
 }
