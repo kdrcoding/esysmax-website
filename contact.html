@@ -64,7 +64,7 @@
         <div class="field"><label for="c-topic">Topic</label>
           <select id="c-topic" name="topic">
             <option value="question">A question</option>
-            <option value="move">Move my lifetime licence to a new PC</option>
+            <option value="move">Move my lifetime licence to a new PC (one time only)</option>
             <option value="licence">My licence / payment</option>
           </select>
         </div>
@@ -72,7 +72,19 @@
           <div class="field"><label for="c-pc">PC ID <span class="opt" id="c-pc-opt">(optional)</span></label><input class="mono" type="text" id="c-pc" name="machine" maxlength="64" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="32 letters and digits" aria-describedby="c-pc-hint"><p class="hint" id="c-pc-hint">E-Sys MAX launcher: <b>Help &gt; Licence &gt; Copy this PC's ID</b>.</p></div>
           <div class="field"><label for="c-licence">Licence ID <span class="opt">(optional)</span></label><input class="mono" type="text" id="c-licence" name="licence" maxlength="40" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="EMX-0123456789ABCDEF" aria-describedby="c-licence-hint"><p class="hint" id="c-licence-hint"><b>Help &gt; Licence</b> in E-Sys MAX.</p></div>
         </div>
-        <p class="note" id="c-move-help" hidden>For a move: enter the PC ID of the <b>new</b> PC and the licence ID of your licence. No licence ID at hand? Then give the e-mail address you ordered with above, so we can find your licence.</p>
+        <div id="c-move" hidden>
+          <p class="note" id="c-move-help">A lifetime licence can be moved to a new PC <b>one time</b>, by its owner. Enter the PC ID of the <b>new</b> PC, your licence ID, and use the <b>e-mail you ordered with</b> above.</p>
+          <div class="field"><label for="c-reason">Why does it move?</label>
+            <select id="c-reason" name="reason">
+              <option value="">Choose a reason</option>
+              <option value="broken">My old PC is broken or lost</option>
+              <option value="wont-start">E-Sys MAX or E-Sys no longer starts on the old PC</option>
+              <option value="new-pc">I replaced the old PC with a new one</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="c-details">A few words <span class="opt" id="c-details-opt">(optional)</span></label><input type="text" id="c-details" name="details" maxlength="300" autocomplete="off"></div>
+        </div>
         <div class="field"><label for="c-message">Message</label><textarea id="c-message" name="message" rows="6" maxlength="3000" required aria-describedby="c-message-hint"></textarea><p class="hint" id="c-message-hint">10 to 3000 characters (<span id="c-count">0</span> / 3000).</p></div>
         <div class="hp" aria-hidden="true"><label for="c-website">Website (leave empty)</label><input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="actions"><button class="btn btn-primary btn-lg" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg> Send message</button></div>
@@ -110,6 +122,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/js/site.min.js?v=db7256b444" defer></script>
+<script src="/assets/js/site.min.js?v=781aaef255" defer></script>
 </body>
 </html>
