@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.50",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.50/E-Sys-Max-1.2.50-win-x64.msi",
-  "sha256": "E07222B21D5A96AE1AD73B493599D084FBF0EC55C9AE846EB2ECBE12A398E058",
-  "size": 59036869,
-  "notes": "A new, opt-in way to help improve E-Sys MAX: anonymous reports of what broke and what was used (never a VIN, never anything about your car or coding). Off by default, with a clear choice and a Show what is sent button; you\u0027ll be asked once. Also some small fixes under the hood.",
+  "version": "1.2.51",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.51/E-Sys-Max-1.2.51-win-x64.msi",
+  "sha256": "09EB071CF0D867660C007895E4DE532094975354349AB50B49AE46795E6756A3",
+  "size": 59016389,
+  "notes": "The battery voltage in the top-right corner now shows straight away on cars whose gateway takes one connection at a time (F10 and similar): it is read when you open Connection, before E-Sys connects, and shown with its age while E-Sys is connected. Click it to try again. Also some small fixes under the hood.",
   "published": "2026-10-03"
 }
