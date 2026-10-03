@@ -28,7 +28,8 @@ NOT_LISTED = ('404', 'thank-you')  # not in the sitemap (and noindex)
 # site.js sends with the checkout). Keep it the same as "Version ..." at the top of src/pages/terms.html.
 TERMS_VERSION = '2026-10-03'
 
-NAV = [('Features', '/#features'), ('How to buy', '/#buy'), ('Pricing', '/#pricing'), ('Guide', '/guide'), ('Download', '/download'), ('Licence', '/licence'), ('FAQ', '/#faq')]
+# Six links: Download is the header's own button, so it is not repeated here.
+NAV = [('Features', '/#features'), ('How it works', '/#how'), ('Pricing', '/#pricing'), ('FAQ', '/#faq'), ('Guide', '/guide'), ('Licence', '/licence')]
 
 ICONS = {
     'check': '<path d="M20 6 9 17l-5-5"/>',
@@ -85,9 +86,9 @@ LAYOUT = '''<!doctype html>
 <title>{title}</title>
 <meta name="description" content="{description}">
 {seo}<link rel="preload" href="/assets/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/Rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/site.min.css">
-<meta name="theme-color" content="#0b0c0f">
+<meta name="theme-color" content="#0a0c10">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="E-Sys MAX">
 <meta property="og:locale" content="en_US">
@@ -133,7 +134,7 @@ LAYOUT = '''<!doctype html>
         <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
         <p class="made-usa">''' + USFLAG + '''<span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
       </div>
-      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#buy">How to buy</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a><a href="/#faq">FAQ</a></nav>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
       <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
       <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
     </div>
@@ -250,7 +251,8 @@ def structured_data(name, meta, body):
     graph = []
     if name == 'index':
         graph += [ORG, WEBSITE, SOFTWARE]
-        faq = re.findall(r'<details><summary>(.*?)</summary><div class="answer">(.*?)</div></details>', body, re.S)
+        # Every question in the FAQ, with or without an id (linked answers: <details id="upgrade">).
+        faq = re.findall(r'<details(?: id="[\w-]+")?><summary>(.*?)</summary><div class="answer">(.*?)</div></details>', body, re.S)
         if faq:
             graph.append({'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': [
                 {'@type': 'Question', 'name': text_of(q), 'acceptedAnswer': {'@type': 'Answer', 'text': text_of(a)}} for q, a in faq]})
@@ -309,7 +311,7 @@ MANIFEST = {
     'name': 'E-Sys MAX', 'short_name': 'E-Sys MAX',
     'description': 'BMW coding with E-Sys, in plain English.',
     'start_url': '/', 'scope': '/', 'display': 'standalone',
-    'background_color': '#0b0c0f', 'theme_color': '#0b0c0f',
+    'background_color': '#0a0c10', 'theme_color': '#0a0c10',
     'icons': [{'src': '/assets/img/favicon-192.png', 'sizes': '192x192', 'type': 'image/png'},
               {'src': '/assets/img/icon-512.png', 'sizes': '512x512', 'type': 'image/png'}],
 }
