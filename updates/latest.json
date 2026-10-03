@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.49",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.49/E-Sys-Max-1.2.49-win-x64.msi",
-  "sha256": "30A152A4B63B9CA1752A446C681135CA316EAC1E0C0E70C21A24F0B0D4365841",
-  "size": 59008197,
-  "notes": "Setting names now come from the E-Sys MAX server for the car you code (a second or two the first time; then kept on this PC and used offline). The names data opens again on E-Sys 3.30 and 3.36. Security: a new names key with every release, given only to active licences.",
+  "version": "1.2.50",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.50/E-Sys-Max-1.2.50-win-x64.msi",
+  "sha256": "E07222B21D5A96AE1AD73B493599D084FBF0EC55C9AE846EB2ECBE12A398E058",
+  "size": 59036869,
+  "notes": "A new, opt-in way to help improve E-Sys MAX: anonymous reports of what broke and what was used (never a VIN, never anything about your car or coding). Off by default, with a clear choice and a Show what is sent button; you\u0027ll be asked once. Also some small fixes under the hood.",
   "published": "2026-10-03"
 }
