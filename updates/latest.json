@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.46",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.46/E-Sys-Max-1.2.46-win-x64.msi",
-  "sha256": "1CD4B08094241DE8B15A65D5A762605B9A41C415EFDBCCC557E8B9727295B03A",
+  "version": "1.2.47",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.47/E-Sys-Max-1.2.47-win-x64.msi",
+  "sha256": "23E0F1D8085EB32AA015C66B12641E7638910DBF0D05DA1E69EA50415E9E789B",
   "size": 59819205,
-  "notes": "Save and code straight from the FDL-Editor, with a wider CAFD panel that explains each setting. Your car is picked automatically in Open Connection and the battery voltage works on E-Sys 22.x. Home shows your cars and a setup check (E-Sys, PSdZData, ENET cable). Help shows your licence: plan, days left, Renew and Move. Updates are checked automatically with a notice, E-Sys errors are explained when it closes, a compact licence window, a PSdZ data list in Settings, and many fixes.",
+  "notes": "The PSdZ data size in Settings is now measured once and kept; it is measured again only when you install another PSdZData version. Includes everything from 1.2.46: Save and code from the FDL-Editor, automatic car selection, battery voltage on E-Sys 22.x, your cars and setup check on Home, the licence card, automatic update checks and many fixes.",
   "published": "2026-10-03"
 }
