@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.40",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.40/E-Sys-Max-1.2.40-win-x64.msi",
-  "sha256": "A94D443DD7342B0EBCB10D2F444E9F0EFA0D85F85B6CFB8AD2EDB3F920C60590",
-  "size": 59540677,
-  "notes": "Fault scan now explains BMW\u0027s own fault codes in English (about 39,800 codes for F/G modules). Coding history: compare any two codings, and Re-apply my coding after a flash, I-step update or dealer visit. E-Sys asks before coding a module that needs secure coding. One-click presets in the FDL-Editor, cheat sheets CSV export, and readable vehicle order line and report window in the dark look.",
+  "version": "1.2.46",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.46/E-Sys-Max-1.2.46-win-x64.msi",
+  "sha256": "1CD4B08094241DE8B15A65D5A762605B9A41C415EFDBCCC557E8B9727295B03A",
+  "size": 59819205,
+  "notes": "Save and code straight from the FDL-Editor, with a wider CAFD panel that explains each setting. Your car is picked automatically in Open Connection and the battery voltage works on E-Sys 22.x. Home shows your cars and a setup check (E-Sys, PSdZData, ENET cable). Help shows your licence: plan, days left, Renew and Move. Updates are checked automatically with a notice, E-Sys errors are explained when it closes, a compact licence window, a PSdZ data list in Settings, and many fixes.",
   "published": "2026-10-03"
 }
