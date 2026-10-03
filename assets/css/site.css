@@ -8,7 +8,7 @@
   --line-2: #323844;
   --text: #e9ebef;
   --muted: #9ca3af;
-  --faint: #6b7280;
+  --faint: #808898; /* 4.5:1 or more on every background: small print stays readable (WCAG AA) */
   --orange: #ff7a00;
   --orange-2: #ffa31a;
   --orange-soft: rgba(255, 122, 0, 0.12);
@@ -380,7 +380,7 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .card, .btn, .menu-toggle span { transition: none; }
+  .card, .btn, .menu-toggle span, .faq summary::after { transition: none; }
 }
 
 /* ---------------------------------------------------------------- small screens */

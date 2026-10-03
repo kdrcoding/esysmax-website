@@ -5,7 +5,7 @@
 Writes, all next to index.html (commit them: Hostinger serves the repository as it is):
 - <name>.html for every page in src/pages,
 - assets/css/site.min.css (assets/fonts/fonts.css + assets/css/site.css, minified) and assets/js/site.min.js,
-- sitemap.xml (with the date each page last changed) and robots.txt.
+- sitemap.xml (with the date each page last changed), robots.txt and site.webmanifest (the site icons: tools/images.py).
 
 Every /assets/ address in the pages and the CSS gets ?v=<hash of the file>, so browsers and Cloudflare may keep
 assets for a year (.htaccess) and still see a changed file at once. Images: see tools/images.py.
@@ -97,9 +97,13 @@ LAYOUT = '''<!doctype html>
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{site}/assets/img/og.png">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/assets/img/favicon-64.png">
-<link rel="apple-touch-icon" href="/assets/img/emblem-180.png">
+<meta name="twitter:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 {jsonld}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -202,24 +206,35 @@ def text_of(fragment):
     return re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', fragment))).strip()
 
 
+# The logo: the square site icon (emblem on the dark background) that tools/images.py makes; it reads well on
+# Google's white background, which the light grey emblem alone does not.
 ORG = {
     '@type': 'Organization', '@id': SITE + '/#organization', 'name': 'KDR Coding', 'url': SITE + '/',
-    'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/img/emblem-512.png', 'width': 512, 'height': 512},
+    'logo': {'@type': 'ImageObject', 'url': SITE + '/assets/img/icon-512.png', 'width': 512, 'height': 512},
+    'image': SITE + '/assets/img/icon-512.png',
     'address': {'@type': 'PostalAddress', 'addressLocality': 'Los Angeles', 'addressRegion': 'CA', 'addressCountry': 'US'},
-    'contactPoint': {'@type': 'ContactPoint', 'contactType': 'customer support', 'url': 'https://t.me/EsysMaxbot', 'availableLanguage': 'English'},
+    'contactPoint': {'@type': 'ContactPoint', 'contactType': 'customer support', 'url': SITE + '/contact', 'availableLanguage': 'English'},
+    'sameAs': ['https://t.me/EsysMaxbot'],
 }
-WEBSITE = {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'E-Sys MAX', 'url': SITE + '/', 'inLanguage': 'en-US', 'publisher': {'@id': SITE + '/#organization'}}
+# name and alternateName: the site name Google shows above the result (see "site names" in Google's documentation).
+WEBSITE = {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'E-Sys MAX', 'alternateName': ['EsysMax', 'ESys MAX'],
+           'url': SITE + '/', 'inLanguage': 'en-US', 'publisher': {'@id': SITE + '/#organization'}}
 SOFTWARE = {
     '@type': 'SoftwareApplication', '@id': SITE + '/#software', 'name': 'E-Sys MAX', 'url': SITE + '/',
     'description': 'A Windows add-on and launcher for BMW E-Sys: English names for coding settings, ready-made coding changes, '
                    'a vehicle order helper, fault scan, full backups and coding history. E-Sys itself is not included.',
     'applicationCategory': 'UtilitiesApplication', 'operatingSystem': 'Windows 10, Windows 11',
+    'softwareRequirements': 'BMW E-Sys with PSdZData and an ENET cable (not included)',
     'downloadUrl': SITE + '/download', 'screenshot': SITE + '/assets/img/vehicle-order.jpg',
+    'image': SITE + '/assets/img/icon-512.png',
     'publisher': {'@id': SITE + '/#organization'},
     'offers': [
-        {'@type': 'Offer', 'name': '1 month', 'price': '39.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=month', 'seller': {'@id': SITE + '/#organization'}},
-        {'@type': 'Offer', 'name': '1 year', 'price': '59.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=year', 'seller': {'@id': SITE + '/#organization'}},
-        {'@type': 'Offer', 'name': 'Lifetime', 'price': '99.00', 'priceCurrency': 'USD', 'url': SITE + '/buy?plan=lifetime', 'seller': {'@id': SITE + '/#organization'}},
+        {'@type': 'Offer', 'name': name, 'description': text, 'price': price, 'priceCurrency': 'USD',
+         'availability': 'https://schema.org/InStock', 'url': SITE + '/buy?plan=' + plan, 'seller': {'@id': SITE + '/#organization'}}
+        for name, plan, price, text in (
+            ('1 month', 'month', '39.00', 'Every feature for 30 days on one PC. One-time payment, no automatic renewal.'),
+            ('1 year', 'year', '59.00', 'Every feature for 365 days on one PC. One-time payment, no automatic renewal.'),
+            ('Lifetime', 'lifetime', '99.00', 'Every feature and every future update, one PC; can be moved to a new PC one time. One-time payment.'))
     ],
 }
 
@@ -285,6 +300,17 @@ def render(name, text):
     return versioned(page)
 
 
+# /site.webmanifest (linked from every page): the name and icons for "Install" / "Add to home screen".
+MANIFEST = {
+    'name': 'E-Sys MAX', 'short_name': 'E-Sys MAX',
+    'description': 'BMW coding with E-Sys, in plain English.',
+    'start_url': '/', 'scope': '/', 'display': 'standalone',
+    'background_color': '#0b0c0f', 'theme_color': '#0b0c0f',
+    'icons': [{'src': '/assets/img/favicon-192.png', 'sizes': '192x192', 'type': 'image/png'},
+              {'src': '/assets/img/icon-512.png', 'sizes': '512x512', 'type': 'image/png'}],
+}
+
+
 def last_changed(path):
     """The day the page source was last committed, or today when it has changes not committed yet."""
     try:
@@ -315,7 +341,8 @@ def main():
             SITE, '/' if p == 'index' else '/' + p, last_changed('src/pages/{0}.html'.format(p))))
     write('sitemap.xml', '\n'.join(lines + ['</urlset>', '']))
     write('robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: {0}/sitemap.xml\n'.format(SITE))
-    print('built', ', '.join(built), '+ site.min.css, site.min.js, sitemap.xml, robots.txt')
+    write('site.webmanifest', versioned(json.dumps(MANIFEST, indent=2)) + '\n')
+    print('built', ', '.join(built), '+ site.min.css, site.min.js, sitemap.xml, robots.txt, site.webmanifest')
 
 
 if __name__ == '__main__':
