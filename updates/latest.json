@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.47",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.47/E-Sys-Max-1.2.47-win-x64.msi",
-  "sha256": "23E0F1D8085EB32AA015C66B12641E7638910DBF0D05DA1E69EA50415E9E789B",
-  "size": 59819205,
-  "notes": "The PSdZ data size in Settings is now measured once and kept; it is measured again only when you install another PSdZData version. Includes everything from 1.2.46: Save and code from the FDL-Editor, automatic car selection, battery voltage on E-Sys 22.x, your cars and setup check on Home, the licence card, automatic update checks and many fixes.",
+  "version": "1.2.48",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.48/E-Sys-Max-1.2.48-win-x64.msi",
+  "sha256": "58A0502BB3B1B7260031C6003FAD3C42581146D3C2B4502993D8631B5DFC5F0B",
+  "size": 60097733,
+  "notes": "Security update: E-Sys MAX now checks the real date when E-Sys starts and refuses to run with programs injected into E-Sys, so licences can no longer be stretched or bypassed. Data files are encrypted. Includes 1.2.47: the PSdZ data size is measured once and kept.",
   "published": "2026-10-03"
 }
