@@ -61,6 +61,10 @@ ICONS = {
 }
 
 
+# The US flag, drawn (Windows shows the flag emoji as the letters "US").
+USFLAG = '''<svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg>'''
+
+
 def icon(name):
     return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
             'stroke-linejoin="round" aria-hidden="true">' + ICONS[name] + '</svg>')
@@ -127,7 +131,7 @@ LAYOUT = '''<!doctype html>
       <div>
         {logo_foot}
         <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
-        <p style="margin-top:10px">A US business: KDR Coding, Los Angeles, California. Prices in US dollars.</p>
+        <p class="made-usa">''' + USFLAG + '''<span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
       </div>
       <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#buy">How to buy</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a><a href="/#faq">FAQ</a></nav>
       <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
@@ -285,7 +289,7 @@ def render(name, text):
     url = SITE + path
     noindex = meta.get('robots', '').startswith('noindex')
     nav = ''.join('<a href="{0}"{1}>{2}</a>'.format(href, ' aria-current="page"' if href == path else '', label) for label, href in NAV)
-    body = re.sub(r'\{icon:(\w+)\}', lambda m: icon(m.group(1)), body.strip('\n')).replace('{terms}', TERMS_VERSION)
+    body = re.sub(r'\{icon:(\w+)\}', lambda m: icon(m.group(1)), body.strip('\n')).replace('{terms}', TERMS_VERSION).replace('{usflag}', USFLAG)
     body = label_tables(body)
     if noindex:
         seo = '<meta name="robots" content="{0}">\n'.format(meta['robots'])
