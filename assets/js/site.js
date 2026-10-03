@@ -202,7 +202,9 @@
     var target = id && /^[a-z0-9-]+$/.test(id) ? document.getElementById(id) : null;
     if (target && target.tagName === 'DETAILS') {
       target.open = true;
-      target.scrollIntoView({ block: 'center' });
+      // After the page has its final layout (fonts, images), or the scroll lands short.
+      var go = function () { setTimeout(function () { target.scrollIntoView({ block: 'start' }); }, 60); };
+      if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
     }
   };
   openLinked();
