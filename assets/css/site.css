@@ -471,3 +471,8 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
 @media (max-width: 560px) { .grid-4 { grid-template-columns: 1fr; } }
 .section.usa { background: linear-gradient(180deg, rgba(60,59,110,0.16), rgba(178,34,52,0.06) 70%, transparent); }
 .made-usa { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+
+/* The 1-year plan: a green "save" tag, and the upgrade line in its list. */
+.tag.save { background: linear-gradient(180deg, #4fd08a, #2fae6a); color: #04170c; }
+.plan.year { border-color: rgba(79, 208, 138, 0.45); }
+.plan .ticks li.plus { color: var(--text); }
