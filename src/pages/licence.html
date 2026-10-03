@@ -13,41 +13,45 @@ description: How to activate an E-Sys MAX licence, get it again after a Windows 
   <div class="wrap cols">
     <div>
       <div class="panel" id="activate">
-        <h2 style="font-size:1.7rem">Activate</h2>
+        <h2>Activate</h2>
         <ol class="how">
           <li>Open the E-Sys MAX launcher, <b>Help &gt; Licence</b>.</li>
           <li>Paste the licence (the text that starts with <span class="mono">EMAX1.</span>) into box 1.</li>
           <li>Press <b>Activate</b>. The launcher shows what the licence is and until when.</li>
         </ol>
-        <p class="muted">Got your licence in Telegram? You don't need to paste anything: it arrives by itself when E-Sys MAX starts, or press <b>Refresh</b> (top right) or <b>Help &gt; Licence &gt; Check for my licence</b>.</p>
+        <p class="muted mt-s">Got your licence in Telegram? You don't need to paste anything: it arrives by itself when E-Sys MAX starts, or press <b>Refresh</b> (top right) or <b>Help &gt; Licence &gt; Check for my licence</b>.</p>
       </div>
       <form class="panel" id="find-form" novalidate>
-        <h2 style="font-size:1.7rem">Find my licence</h2>
+        <h2>Find my licence</h2>
         <p class="muted">Bought by card? Your e-mail and PC ID give your licence back, for example after a Windows reinstall.</p>
         <div class="field"><label for="find-email">E-mail of your order</label><input type="email" id="find-email" autocomplete="email" placeholder="you@example.com"></div>
         <div class="field"><label for="find-pc">PC ID</label><input class="mono" type="text" id="find-pc" autocomplete="off" spellcheck="false" autocapitalize="characters" placeholder="32 letters and digits"><p class="hint">In the E-Sys MAX launcher: <b>Help &gt; Licence &gt; Copy this PC's ID</b>.</p></div>
         <div class="actions"><button class="btn btn-primary" type="submit">Find my licence</button><a class="btn btn-ghost" data-telegram-from="#find-pc" href="https://t.me/EsysMaxbot">Bought in Telegram? Ask the bot</a></div>
         <div class="note" id="find-note" role="status" aria-live="polite"></div>
-        <div id="find-licence" hidden style="margin-top:16px">
+        <div id="find-licence" hidden class="mt-s">
           <div class="licence-box"></div>
-          <div class="actions" style="margin-top:12px"><button class="btn btn-primary" type="button" data-copy-licence>Copy licence</button></div>
+          <div class="actions mt-s"><button class="btn btn-primary" type="button" data-copy-licence>Copy licence</button></div>
         </div>
       </form>
       <div class="panel" id="move">
-        <h2 style="font-size:1.7rem">New PC</h2>
+        <h2>New PC</h2>
         <p class="muted">A licence is for one PC. A <b>lifetime</b> licence can be moved to a new PC <b>one time</b>, by its owner, for example when the old PC broke or was replaced: on the new PC, open <b>Help &gt; Licence &gt; Get a licence on Telegram</b> and choose <b>Move my licence to this PC</b>. Once approved you get the licence for the new PC in Telegram; the old PC stops at its next licence check.</p>
         <p class="muted">No Telegram? Use the <a href="/contact?topic=move">contact form</a>, topic <b>Move my lifetime licence to a new PC</b>, with your licence ID, the e-mail of your order and the reason for the move.</p>
         <p class="muted">A 1-month or 1-year licence stays on the PC it was bought for and cannot be moved to another PC. 1-year licences bought before 3 October 2026 can still be moved.</p>
         <p class="muted">Your licence is tied to the motherboard: a Windows reinstall, a new SSD or more RAM on the same PC do not need a move, whatever the plan.</p>
       </div>
     </div>
-    <aside class="panel">
-      <h3>The weekly check</h3>
-      <p class="muted">When the launcher starts with internet, it confirms the licence with the licence server in a second. After that E-Sys MAX works offline for up to <b>7 days</b>. After 7 days without a check it asks for the internet once.</p>
-      <h3 style="margin-top:24px">What is sent</h3>
-      <p class="muted">The licence, the PC ID, short codes made from the PC's hardware (never the serial numbers themselves) and the E-Sys MAX version. Nothing about your car. See <a href="/privacy">privacy</a>.</p>
-      <h3 style="margin-top:24px">Help</h3>
-      <p class="muted">Write to <a href="https://t.me/EsysMaxbot">@EsysMaxbot</a> on Telegram.</p>
+    <aside>
+      <div class="panel">
+        <h3>The weekly check</h3>
+        <p class="muted">When the launcher starts with internet, it confirms the licence with the licence server in a second. After that E-Sys MAX works offline for up to <b>7 days</b>. After 7 days without a check it asks for the internet once.</p>
+        <h3 class="mt">What is sent</h3>
+        <p class="muted">The licence, the PC ID, short codes made from the PC's hardware (never the serial numbers themselves) and the E-Sys MAX version. Nothing about your car. See <a href="/privacy">privacy</a>.</p>
+      </div>
+      <div class="panel">
+        <h3>Help</h3>
+        <p class="muted">Write to <a href="https://t.me/EsysMaxbot">@EsysMaxbot</a> on Telegram, or use the <a href="/contact">contact form</a>.</p>
+      </div>
     </aside>
   </div>
 </section>

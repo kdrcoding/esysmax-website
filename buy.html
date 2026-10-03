@@ -8,9 +8,9 @@
 <link rel="canonical" href="https://esysmax.com/buy">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="preload" href="/assets/fonts/Inter-var.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/Rajdhani-700.woff2?v=5b7e4a6f97" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/site.min.css?v=2140531343">
-<meta name="theme-color" content="#0b0c0f">
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2?v=83c005d49d" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.min.css?v=6730eb4f8e">
+<meta name="theme-color" content="#0a0c10">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="E-Sys MAX">
 <meta property="og:locale" content="en_US">
@@ -39,7 +39,7 @@
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/" aria-label="E-Sys MAX home"><picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="129px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="129" height="40" alt="E-Sys MAX"></picture></a>
-    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#buy">How to buy</a><a href="/#pricing">Pricing</a><a href="/guide">Guide</a><a href="/download">Download</a><a href="/licence">Licence</a><a href="/#faq">FAQ</a></nav>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/guide">Guide</a><a href="/licence">Licence</a></nav>
     <div class="head-cta">
       <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
       <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
@@ -65,7 +65,7 @@
       </div>
       <fieldset class="field plan-field">
         <legend>Plan</legend>
-        <div class="choice ladder">
+        <div class="choice">
           <input type="radio" name="plan" id="plan-month" value="month"><label for="plan-month"><b class="name">1 month</b><strong>$39</strong><span>30 days, for one quick job</span><span class="limit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> Stays on this PC (cannot be moved)</span></label>
           <input type="radio" name="plan" id="plan-year" value="year"><label for="plan-year"><span class="tag save">Save 87%</span><b class="name">1 year</b><strong>$59</strong><span>365 days, about 16&cent; a day. Upgrade to lifetime later for $40</span><span class="limit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> Stays on this PC (cannot be moved)</span></label>
           <input type="radio" name="plan" id="plan-lifetime" value="lifetime" checked><label for="plan-lifetime" class="best"><span class="tag">Best value</span><b class="name">Lifetime</b><strong>$99</strong><span>Pay once, use it for good. Every future update, priority support</span><span class="limit yes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Can move to a new PC one time</span></label>
@@ -82,7 +82,7 @@
         <a class="btn btn-ghost btn-lg" id="buy-telegram" href="https://t.me/EsysMaxbot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg> Buy in Telegram</a>
       </div>
       <div class="note" id="buy-note" role="status" aria-live="polite"></div>
-      <p class="hint" style="margin-top:16px">Card payments are handled by Stripe; card details never reach us. Your licence appears on the next page right after paying.</p>
+      <p class="hint mt-s">Card payments are handled by Stripe; card details never reach us. Your licence appears on the next page right after paying.</p>
     </form>
     <aside>
       <div class="panel">
@@ -94,6 +94,14 @@
           <li>Support on Telegram (priority for lifetime)</li>
           <li>Lifetime: move it to a new PC one time, for example when you replace your laptop</li>
         </ul>
+      </div>
+      <div class="panel">
+        <h2 class="h3">After paying</h2>
+        <ol class="how">
+          <li>Your licence appears on the next page. Press <b>Copy licence</b>.</li>
+          <li>In the launcher: <b>Help &gt; Licence</b>, paste it, press <b>Activate</b>.</li>
+        </ol>
+        <p class="hint mt-s">Lost it later? The <a href="/licence">licence page</a> finds it again with your e-mail and PC ID.</p>
       </div>
       <div class="panel">
         <h2 class="h3">Not sure yet?</h2>
@@ -111,7 +119,7 @@
         <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
         <p class="made-usa"><svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg><span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
       </div>
-      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#buy">How to buy</a><a href="/#pricing">Pricing</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a><a href="/#faq">FAQ</a></nav>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
       <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
       <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
     </div>
@@ -121,6 +129,6 @@
     </div>
   </div>
 </footer>
-<script src="/assets/js/site.min.js?v=4565f7a690" defer></script>
+<script src="/assets/js/site.min.js?v=1a18cf42db" defer></script>
 </body>
 </html>
