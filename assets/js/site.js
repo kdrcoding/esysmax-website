@@ -203,7 +203,7 @@
     if (target && target.tagName === 'DETAILS') {
       target.open = true;
       // After the page has its final layout (fonts, images), or the scroll lands short.
-      var go = function () { setTimeout(function () { target.scrollIntoView({ block: 'start' }); }, 60); };
+      var go = function () { setTimeout(function () { target.scrollIntoView({ block: 'start', behavior: 'instant' }); }, 60); };
       if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
     }
   };
