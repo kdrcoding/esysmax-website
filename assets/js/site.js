@@ -196,6 +196,18 @@
     });
   }
 
+  // ------------------------------------------------------------ an FAQ answer linked by its id opens
+  var openLinked = function () {
+    var id = decodeURIComponent((location.hash || '').slice(1));
+    var target = id && /^[a-z0-9-]+$/.test(id) ? document.getElementById(id) : null;
+    if (target && target.tagName === 'DETAILS') {
+      target.open = true;
+      target.scrollIntoView({ block: 'center' });
+    }
+  };
+  openLinked();
+  window.addEventListener('hashchange', openLinked);
+
   // ------------------------------------------------------------ contact form (for people without Telegram)
   var contact = $('#contact-form');
   if (contact) {
