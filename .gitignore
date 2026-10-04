@@ -12,3 +12,17 @@ esys-max-names.txt
 contribution*.txt
 *.emx
 fdl-names/
+
+# Never committed, whatever folder they are copied into: secrets from the Dev folder and environment files
+*token*.txt
+*secret*.txt
+*service-key*
+*signing-key*
+.env
+.env.*
+# BMW and collected names data, and licence files
+fault-texts/
+setting-help.txt
+typekey-names.txt
+fa-code-names.bmw*.txt
+EMX-*.txt
