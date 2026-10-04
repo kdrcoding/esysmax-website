@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.51",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.51/E-Sys-Max-1.2.51-win-x64.msi",
-  "sha256": "09EB071CF0D867660C007895E4DE532094975354349AB50B49AE46795E6756A3",
-  "size": 59016389,
-  "notes": "The battery voltage in the top-right corner now shows straight away on cars whose gateway takes one connection at a time (F10 and similar): it is read when you open Connection, before E-Sys connects, and shown with its age while E-Sys is connected. Click it to try again. Also some small fixes under the hood.",
-  "published": "2026-10-03"
+  "version": "1.2.53",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.53/E-Sys-Max-1.2.53-win-x64.msi",
+  "sha256": "FA0DF943CE898F59D625F5520C3039AD393194759D26EFCD74E72D0CEA6C18A9",
+  "size": 59086021,
+  "notes": "Community cheat sheets: one click in Settings brings 23 free community sheets with thousands of cheats and setting names (marked \u00B0). A community name that is wrong for your car can be fixed and sent to us. Full backup now works on E-Sys 24, the FA editor adds codes properly, faults are explained in plain English, problem reports reach us directly, and errors in the launcher stay visible. Plus many small fixes.",
+  "published": "2026-10-04"
 }
