@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.53",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.53/E-Sys-Max-1.2.53-win-x64.msi",
-  "sha256": "FA0DF943CE898F59D625F5520C3039AD393194759D26EFCD74E72D0CEA6C18A9",
-  "size": 59086021,
-  "notes": "Community cheat sheets: one click in Settings brings 23 free community sheets with thousands of cheats and setting names (marked \u00B0). A community name that is wrong for your car can be fixed and sent to us. Full backup now works on E-Sys 24, the FA editor adds codes properly, faults are explained in plain English, problem reports reach us directly, and errors in the launcher stay visible. Plus many small fixes.",
-  "published": "2026-10-04"
+  "version": "1.2.56",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.56/E-Sys-Max-1.2.56-win-x64.msi",
+  "sha256": "05E670FB846FD570734A5EFB4B1A702DE9084FB75D7AAAFA4413CA4779234121",
+  "size": 59163851,
+  "notes": "Settings and fixes: switches in Settings show the right values straight away and keep every click (also with two E-Sys MAX windows open), Settings \u003E Backups shows both folders your copies really go to and always lets you change the backup folder, the coding help reads the data pack of the E-Sys version you start, entering a licence no longer undoes a licence check that ran meanwhile, and the per-version settings check the folders before saving anything. Includes the 1.2.54 bug-hunt fixes: full backup on E-Sys 24 keeps coding files that two modules share, the vehicle profile is only saved for the right car, times show in your local time, Save and code knows when coding was cancelled, one-click updates keep a custom install folder, flash detection works on E-Sys 3.x, and more safety around starting E-Sys.",
+  "published": "2026-10-05"
 }
