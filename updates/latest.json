@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "2.0.2",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.2/E-Sys-Max-2.0.2-win-x64.msi",
-  "sha256": "700424D3B6D30102BB5AF7B0329FEEEE1D8042AE22051CDB7AB56931FFD4F945",
-  "size": 59126979,
-  "notes": "E-Sys MAX 2.0.2: works with E-Sys 25.10 (tested: menu, dark look, battery badge, every page, protected Code buttons). Write vehicle order to the car works again through E-Sys\u0027s own Write FA FP on Expert Mode \u003E VCM, still with the same-VIN check and No as the default. The coding file editor opens big modules much faster and shows community sheet texts in English. The car card menu shows its text again.",
+  "version": "2.0.3",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.3/E-Sys-Max-2.0.3-win-x64.msi",
+  "sha256": "1BB68C4476378AECC2C4132D13F790E8EFD08664276B2882AEE3EC28A929A4A6",
+  "size": 59155651,
+  "notes": "E-Sys MAX 2.0.3: a cleaner Settings page in cards like the rest of E-Sys MAX, with smaller switches and shorter texts. Also includes 2.0.2: works with E-Sys 25.10, Write vehicle order works again, faster coding file editor.",
   "published": "2026-10-07"
 }
