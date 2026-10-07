@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "1.2.56",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v1.2.56/E-Sys-Max-1.2.56-win-x64.msi",
-  "sha256": "05E670FB846FD570734A5EFB4B1A702DE9084FB75D7AAAFA4413CA4779234121",
-  "size": 59163851,
-  "notes": "Settings and fixes: switches in Settings show the right values straight away and keep every click (also with two E-Sys MAX windows open), Settings \u003E Backups shows both folders your copies really go to and always lets you change the backup folder, the coding help reads the data pack of the E-Sys version you start, entering a licence no longer undoes a licence check that ran meanwhile, and the per-version settings check the folders before saving anything. Includes the 1.2.54 bug-hunt fixes: full backup on E-Sys 24 keeps coding files that two modules share, the vehicle profile is only saved for the right car, times show in your local time, Save and code knows when coding was cancelled, one-click updates keep a custom install folder, flash detection works on E-Sys 3.x, and more safety around starting E-Sys.",
-  "published": "2026-10-05"
+  "version": "2.0.0",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.0/E-Sys-Max-2.0.0-win-x64.msi",
+  "sha256": "9DC17DCE53B32F9A5C3B9AECA2908EFB5AE5F7F9A5076E3787CAF59134D1B553",
+  "size": 59229385,
+  "notes": "E-Sys MAX 2.0: a new, simpler look and easier coding. Home is your garage: your car drawn by its body type, when it was last read, and your E-Sys versions to start, all on one screen without scrolling. Three tabs: Home, Settings and About (your licence now sits in About). In the FDL editor every setting reads plainly: name, byte and bit, value. \u0027What can I code?\u0027 is now a checklist: tick the changes you want, press Apply once, and Undo puts them all back; two changes that would set the same setting differently are refused. Press F2 on a setting to name it, and share your names so every customer gets them. Community cheat sheets download by themselves. Fixes: a current Java 8 inside E-Sys 3.x starts, a maximised window stays on screen, and many smaller fixes.",
+  "published": "2026-10-07"
 }
