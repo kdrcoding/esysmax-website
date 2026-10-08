@@ -22,7 +22,7 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
     <div class="facts">
       <span>{usflag} Made in the USA</span>
       <span>{icon:windows} Windows 10 &amp; 11</span>
-      <span>{icon:plug} Your own E-Sys and ENET cable</span>
+      <span>{icon:plug} Your own E-Sys, ENET cable or ICOM</span>
       <span>{icon:shield} Nothing written to the car without your Yes</span>
       <span>{icon:save} Backups before you change anything</span>
       <span>{icon:refresh} One-click updates</span>
@@ -104,7 +104,7 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
       <div class="cell reveal"><div class="icon">{icon:file}</div><h3>Car report (PDF)</h3><p>Model, build date, options in English, modules, I-step, coding changes and the last fault scan: one PDF to keep or hand to a customer.</p></div>
       <div class="cell reveal"><div class="icon">{icon:shield}</div><h3>Safe by design</h3><p>A write to the car only happens when you press Yes, with No as the default. The car's VIN and E-Sys must agree first, and the battery voltage (KL30) stays in the toolbar while you code.</p></div>
       <div class="cell reveal"><div class="icon">{icon:list}</div><h3>Keep modules out of the TAL</h3><p>Tick the modules E-Sys must leave alone and the next TAL flashes and codes only the rest. Your choice is kept for each car.</p></div>
-      <div class="cell reveal"><div class="icon">{icon:moon}</div><h3>Launcher, dark theme &amp; updates</h3><p>Start any installed E-Sys version, check the car connection and give E-Sys a calm dark theme. Updates install with one click and are signed: a changed or broken download is refused.</p></div>
+      <div class="cell reveal"><div class="icon">{icon:moon}</div><h3>Launcher, dark theme &amp; updates</h3><p>Start any installed E-Sys version, check the car connection (ENET cable or ICOM, found the way E-Sys looks for cars) and give E-Sys a calm dark theme. Updates install with one click and are signed: a changed or broken download is refused.</p></div>
     </div>
   </div>
 </section>
@@ -128,7 +128,7 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
         <ul>
           <li>{icon:windows} Windows 10 or 11, 64-bit</li>
           <li>{icon:pc} BMW E-Sys (3.x to 25.x) with PSdZData</li>
-          <li>{icon:plug} An ENET cable to the car</li>
+          <li>{icon:plug} An ENET cable or a BMW ICOM to the car</li>
           <li>{icon:battery} A battery charger on the car while coding</li>
           <li>{icon:refresh} Internet once a week, for the licence check</li>
         </ul>
@@ -215,7 +215,8 @@ description: E-Sys MAX adds English setting names, ready-made coding changes, a 
     <div class="faq faq-grid">
       <div class="faq-group">
         <h3>The product</h3>
-        <details id="what-you-need"><summary>What do I need besides E-Sys MAX?</summary><div class="answer"><p>Four things: <b>BMW E-Sys</b> (any version from 3.x to 25.x works; tested with 25.10, 24.06, 22.10, 22.06 and 3.40), <b>PSdZData</b> for it (the Lite pack is enough for coding; the Full pack is needed only for flashing), an <b>ENET cable</b> from your laptop to the car's OBD port (no Ethernet port? a USB Ethernet adapter works), and a <b>battery charger</b> on the car while you code. E-Sys and PSdZData are BMW software: they are not included and not supplied by E-Sys MAX, so use the E-Sys and PSdZData you already have. The launcher finds them by itself and shows a setup check on Home: E-Sys, PSdZData and the ENET cable, each green when it is ready, with a hint when something is missing.</p></div></details>
+        <details id="what-you-need"><summary>What do I need besides E-Sys MAX?</summary><div class="answer"><p>Four things: <b>BMW E-Sys</b> (any version from 3.x to 25.x works; tested with 25.10, 24.06, 22.10, 22.06 and 3.40), <b>PSdZData</b> for it (the Lite pack is enough for coding; the Full pack is needed only for flashing), an <b>ENET cable</b> from your laptop to the car's OBD port (no Ethernet port? a USB Ethernet adapter works) or a <b>BMW ICOM</b>, and a <b>battery charger</b> on the car while you code. E-Sys and PSdZData are BMW software: they are not included and not supplied by E-Sys MAX, so use the E-Sys and PSdZData you already have. The launcher finds them by itself and shows a setup check on Home: E-Sys, PSdZData and the ENET cable, each green when it is ready, with a hint when something is missing.</p></div></details>
+        <details><summary>Does it work with an ICOM?</summary><div class="answer"><p>Yes. In E-Sys press <b>Connect</b> and choose <b>Connection via ICOM/Ethernet</b> with the ICOM's address, for example <b>tcp://192.168.68.200:50160</b>. E-Sys MAX reads that choice and reaches the car through the ICOM for the battery voltage, the fault scan and the full backup, the same way E-Sys does. Not sure about the address or the network? The launcher's <b>car connection check</b> tests the ICOM and tells you what to pick. An ICOM that ISTA or another PC has reserved must be released there first.</p></div></details>
         <details><summary>Is E-Sys included?</summary><div class="answer"><p>No. E-Sys MAX adds to BMW's E-Sys and works with the E-Sys, PSdZData and ENET cable you already use. It finds your installed E-Sys versions by itself.</p></div></details>
         <details><summary>Which cars does it work with?</summary><div class="answer"><p>The BMW models E-Sys codes: the F series and the G series. Try it on your car for free first. Setting names are most complete for the F series; G-series names grow with every update.</p></div></details>
         <details><summary>Can it change my car without me knowing?</summary><div class="answer"><p>No. Reading, searching, history and reports never write to the car. A write only happens when you press Yes in E-Sys or in E-Sys MAX, and No is always the default.</p></div></details>
