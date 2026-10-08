@@ -18,10 +18,11 @@ SRC = os.path.join(ROOT, 'src', 'img')
 
 # name -> widths of the WebP files (the largest is the original width)
 SCREENSHOTS = {
-    'vehicle-order': [720, 1320],
-    'cafd-panel': [461],
-    'search': [640, 1164],
-    'history': [640, 1164],
+    'vehicle-order': [720, 1318],
+    'cafd-panel': [480, 862],
+    'cafd-front': [560],
+    'search': [640, 1148],
+    'history': [640, 1304],
 }
 
 

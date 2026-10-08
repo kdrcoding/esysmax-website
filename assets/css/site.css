@@ -144,6 +144,15 @@ main > * { position: relative; z-index: 1; }
 
 /* A screenshot in a window frame (Windows: title on the left, the three window buttons on the right). */
 .shot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line-2); background: #15171a; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9); }
+/* Screenshots sit in the page: a cropped one fades out at its lower edge instead of stopping on a hard line, the
+   space is kept while it loads (no jump), and a window lifts a little under the pointer. */
+.shot { transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; }
+.shot picture { display: block; background: #1e1e1e; }
+.shot img { display: block; width: 100%; height: auto; }
+.shot.crop picture { -webkit-mask-image: linear-gradient(to bottom, #000 78%, transparent); mask-image: linear-gradient(to bottom, #000 78%, transparent); }
+@media (hover: hover) {
+  .shot:hover, .shot.reveal.in:hover { transform: translateY(-4px); border-color: #3a3e45; box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 138, 30, 0.10); }
+}
 .shot .bar { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: #1b1d21; border-bottom: 1px solid #2a2d33; font: 500 0.72rem/1 var(--mono); color: #9aa1ad; letter-spacing: 0.02em; }
 .shot .bar::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); flex: none; }
 .shot .bar .win { display: flex; gap: 16px; margin-left: auto; color: #6f7784; }
@@ -419,12 +428,13 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
 /* ---------------------------------------------------------------- motion */
 /* Only hidden when scripts run (site.js shows them); without JavaScript everything is simply there. */
 @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
   .reveal.in { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .card, .btn, .menu-toggle span, .faq summary::before, .faq summary::after { transition: none; }
+  .card, .btn, .menu-toggle span, .faq summary::before, .faq summary::after, .shot { transition: none; }
+  .shot:hover, .shot.reveal.in:hover { transform: none; }
 }
 
 /* ---------------------------------------------------------------- small screens */
