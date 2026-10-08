@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "2.0.4",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.4/E-Sys-Max-2.0.4-win-x64.msi",
-  "sha256": "DAE000E4F2E8527F5E98C032C2B0C2FF0170E730E7AB9EAAA2F2BD6E0120E41D",
-  "size": 59159747,
-  "notes": "E-Sys MAX 2.0.4: the FA-Editor checks the vehicle order against BMW\u0027s data (type key, build date, every code), type key search, code names in English or German, full backup also saves fault memory, FSCs and VIN, SVT-Editor multi-select and delete, exclude modules from the TAL. Tested with E-Sys 25.10, 24.06, 22.10, 22.06 and 3.40.",
+  "version": "2.0.8",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.8/E-Sys-Max-2.0.8-win-x64.msi",
+  "sha256": "CEB99B6896A70740F7F86FD7FBD09155CDF87052866643A2605782C5E6B8FC34",
+  "size": 59192515,
+  "notes": "Code several changes at once: tick changes in several modules, E-Sys MAX prepares them, asks once and codes module by module, stopping on any error. New loading screen. Fixed the licence read on E-Sys 3.x with old Java 8 and Save and code on E-Sys 25.10.",
   "published": "2026-10-08"
 }
