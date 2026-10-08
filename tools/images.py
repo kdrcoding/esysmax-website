@@ -23,6 +23,7 @@ SCREENSHOTS = {
     'cafd-front': [560],
     'search': [640, 1148],
     'history': [640, 1304],
+    'batch': [640, 984],
 }
 
 
