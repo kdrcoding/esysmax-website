@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "2.0.3",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.3/E-Sys-Max-2.0.3-win-x64.msi",
-  "sha256": "1BB68C4476378AECC2C4132D13F790E8EFD08664276B2882AEE3EC28A929A4A6",
-  "size": 59155651,
-  "notes": "E-Sys MAX 2.0.3: a cleaner Settings page in cards like the rest of E-Sys MAX, with smaller switches and shorter texts. Also includes 2.0.2: works with E-Sys 25.10, Write vehicle order works again, faster coding file editor.",
-  "published": "2026-10-07"
+  "version": "2.0.4",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.4/E-Sys-Max-2.0.4-win-x64.msi",
+  "sha256": "DAE000E4F2E8527F5E98C032C2B0C2FF0170E730E7AB9EAAA2F2BD6E0120E41D",
+  "size": 59159747,
+  "notes": "E-Sys MAX 2.0.4: the FA-Editor checks the vehicle order against BMW\u0027s data (type key, build date, every code), type key search, code names in English or German, full backup also saves fault memory, FSCs and VIN, SVT-Editor multi-select and delete, exclude modules from the TAL. Tested with E-Sys 25.10, 24.06, 22.10, 22.06 and 3.40.",
+  "published": "2026-10-08"
 }
