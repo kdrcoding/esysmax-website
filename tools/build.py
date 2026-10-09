@@ -299,6 +299,38 @@ def label_tables(body):
     return re.sub(r'<table class="data">.*?</table>', table, body, flags=re.S)
 
 
+def baked_download(body):
+    """
+    The download page with the current release written in (from updates/latest.json), so it is complete without
+    JavaScript: for search engines, link previews and readers that do not run scripts. site.js still refreshes it.
+    Rebuild the site whenever updates/latest.json changes (every release).
+    """
+    try:
+        m = json.loads(read(os.path.join('updates', 'latest.json')))
+    except (OSError, ValueError):
+        return body
+    if not m.get('version') or not m.get('installer'):
+        return body
+    url = m['installer'] if m['installer'].startswith('https://') else '/updates/' + m['installer']
+    fill = {
+        'version': m['version'],
+        'size': '{0:.1f} MB'.format(m['size'] / 1048576) if m.get('size') else '',
+        'date': str(m.get('published', ''))[:10],
+        'sha256': m.get('sha256', ''),
+        'notes': m.get('notes', ''),
+    }
+    for key, value in fill.items():
+        body = body.replace('<span data-dl="{0}"></span>'.format(key), '<span data-dl="{0}">{1}</span>'.format(key, html.escape(value)))
+    body = body.replace('<div class="panel" data-download hidden>', '<div class="panel" data-download>')
+    body = body.replace('<a class="btn btn-primary btn-lg" data-download-link href="#" aria-disabled="true">',
+                        '<a class="btn btn-primary btn-lg" data-download-link href="{0}">'.format(html.escape(url)))
+    if fill['notes']:
+        body = body.replace('<div class="notes" data-dl-notes hidden>', '<div class="notes" data-dl-notes>')
+    # The release is on the page itself now: the no-script pointer to GitHub would only repeat it.
+    body = re.sub(r'\s*<noscript>.*?</noscript>', '', body, flags=re.S)
+    return body
+
+
 def render(name, text):
     head, _, body = text.partition('\n---\n')
     meta = {k.strip(): v.strip() for k, v in (line.split(':', 1) for line in head.strip().splitlines())}
@@ -311,6 +343,8 @@ def render(name, text):
     nav = ''.join('<a href="{0}"{1}>{2}</a>'.format(href, ' aria-current="page"' if href == path else '', label) for label, href in NAV)
     body = re.sub(r'\{icon:(\w+)\}', lambda m: icon(m.group(1)), body.strip('\n')).replace('{terms}', TERMS_VERSION).replace('{usflag}', USFLAG)
     body = label_tables(body)
+    if name == 'download':
+        body = baked_download(body)
     if noindex:
         seo = '<meta name="robots" content="{0}">\n'.format(meta['robots'])
         og_url = ''
