@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "2.0.8",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.8/E-Sys-Max-2.0.8-win-x64.msi",
-  "sha256": "CEB99B6896A70740F7F86FD7FBD09155CDF87052866643A2605782C5E6B8FC34",
-  "size": 59192515,
-  "notes": "Code several changes at once: tick changes in several modules, E-Sys MAX prepares them, asks once and codes module by module, stopping on any error. New loading screen. Fixed the licence read on E-Sys 3.x with old Java 8 and Save and code on E-Sys 25.10.",
-  "published": "2026-10-08"
+  "version": "2.0.10",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.10/E-Sys-Max-2.0.10-win-x64.msi",
+  "sha256": "AA8D4DBA0A00B7F55A3864CEBD8A1D2D4E4C4F7678BAB42521BD48401D4C30D1",
+  "size": 59204805,
+  "notes": "ICOM support: when E-Sys is connected through an ICOM, the fault scan, full backup and module info reach the car through it, and the battery reads on a click. The car connection check tests the ICOM and finds DoIP cars. Honest G-series names note in the CAFD editor. Names and helpful problem reports earn free licence time.",
+  "published": "2026-10-09"
 }
