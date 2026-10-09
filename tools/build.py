@@ -29,7 +29,11 @@ NOT_LISTED = ('404', 'thank-you')  # not in the sitemap (and noindex)
 TERMS_VERSION = '2026-10-03'
 
 # Six links: Download is the header's own button, so it is not repeated here.
-NAV = [('Features', '/#features'), ('How it works', '/#how'), ('Pricing', '/#pricing'), ('FAQ', '/#faq'), ('Guide', '/guide'), ('Licence', '/licence')]
+NAV = [('Features', '/#features'), ('How it works', '/#how'), ('Pricing', '/#pricing'), ('FAQ', '/#faq'), ('Guides', '/guides'), ('Licence', '/licence')]
+
+# IndexNow (Bing, Yandex, Seznam, Naver...): the key file at the site root proves the site is ours; tools/indexnow.py
+# tells them which pages changed after a deploy. Not a secret: it is public by design.
+INDEXNOW_KEY = '826669878385841d9bc3533d0dc24155'
 
 ICONS = {
     'check': '<path d="M20 6 9 17l-5-5"/>',
@@ -134,7 +138,7 @@ LAYOUT = '''<!doctype html>
         <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
         <p class="made-usa">''' + USFLAG + '''<span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
       </div>
-      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guides">E-Sys coding guides</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
       <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
       <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
     </div>
@@ -229,7 +233,7 @@ SOFTWARE = {
     'description': 'A Windows add-on and launcher for BMW E-Sys: English names for coding settings, ready-made coding changes, '
                    'a vehicle order helper, fault scan, full backups and coding history. E-Sys itself is not included.',
     'applicationCategory': 'UtilitiesApplication', 'operatingSystem': 'Windows 10, Windows 11',
-    'softwareRequirements': 'BMW E-Sys with PSdZData and an ENET cable (not included)',
+    'softwareRequirements': 'BMW E-Sys with PSdZData and an ENET cable or a BMW ICOM (not included)',
     'downloadUrl': SITE + '/download', 'screenshot': SITE + '/assets/img/vehicle-order.jpg',
     'image': SITE + '/assets/img/icon-512.png',
     'publisher': {'@id': SITE + '/#organization'},
@@ -251,15 +255,29 @@ def structured_data(name, meta, body):
     graph = []
     if name == 'index':
         graph += [ORG, WEBSITE, SOFTWARE]
-        # Every question in the FAQ, with or without an id (linked answers: <details id="upgrade">).
-        faq = re.findall(r'<details(?: id="[\w-]+")?><summary>(.*?)</summary><div class="answer">(.*?)</div></details>', body, re.S)
-        if faq:
-            graph.append({'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': [
-                {'@type': 'Question', 'name': text_of(q), 'acceptedAnswer': {'@type': 'Answer', 'text': text_of(a)}} for q, a in faq]})
     else:
+        # Home > (Guides >) this page.
+        trail = [('E-Sys MAX', SITE + '/')]
+        if meta.get('parent') == 'guides':
+            trail.append(('Guides', SITE + '/guides'))
+        trail.append((meta.get('crumb') or meta['title'], url))
         graph.append({'@type': 'BreadcrumbList', 'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'E-Sys MAX', 'item': SITE + '/'},
-            {'@type': 'ListItem', 'position': 2, 'name': meta.get('crumb') or meta['title'], 'item': url}]})
+            {'@type': 'ListItem', 'position': i + 1, 'name': label, 'item': link} for i, (label, link) in enumerate(trail)]})
+    if meta.get('type') == 'article':
+        changed = last_changed('src/pages/{0}.html'.format(name))
+        graph.append({'@type': 'TechArticle', '@id': url + '#article', 'headline': meta.get('headline') or meta['title'],
+                      'description': meta['description'], 'url': url, 'mainEntityOfPage': url, 'inLanguage': 'en-US',
+                      'datePublished': meta.get('published') or changed, 'dateModified': changed,
+                      'image': SITE + '/assets/img/' + (meta.get('image') or 'vehicle-order.jpg'),
+                      'author': {'@id': SITE + '/#organization'}, 'publisher': {'@id': SITE + '/#organization'},
+                      'about': [{'@type': 'Thing', 'name': 'BMW E-Sys'}, {'@type': 'Thing', 'name': 'BMW coding'}]})
+        if not any(item.get('@id') == ORG['@id'] for item in graph):
+            graph.append(ORG)
+    # Every question in a FAQ, with or without an id (linked answers: <details id="upgrade">).
+    faq = re.findall(r'<details(?: id="[\w-]+")?><summary>(.*?)</summary><div class="answer">(.*?)</div></details>', body, re.S)
+    if faq:
+        graph.append({'@type': 'FAQPage', '@id': url + '#faq', 'mainEntity': [
+            {'@type': 'Question', 'name': text_of(q), 'acceptedAnswer': {'@type': 'Answer', 'text': text_of(a)}} for q, a in faq]})
     data = json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False, separators=(',', ':'))
     return '<script type="application/ld+json">' + data.replace('</', '<\\/') + '</script>\n'
 
@@ -347,6 +365,7 @@ def main():
             SITE, '/' if p == 'index' else '/' + p, last_changed('src/pages/{0}.html'.format(p))))
     write('sitemap.xml', '\n'.join(lines + ['</urlset>', '']))
     write('robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: {0}/sitemap.xml\n'.format(SITE))
+    write(INDEXNOW_KEY + '.txt', INDEXNOW_KEY)
     write('site.webmanifest', versioned(json.dumps(MANIFEST, indent=2)) + '\n')
     print('built', ', '.join(built), '+ site.min.css, site.min.js, sitemap.xml, robots.txt, site.webmanifest')
 

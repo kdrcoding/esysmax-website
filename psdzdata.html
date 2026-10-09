@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is PSdZData? Lite vs Full, versions and I-steps</title>
+<meta name="description" content="PSdZData explained: what E-Sys needs it for, Lite or Full, which version your BMW needs (I-step), and why newer packs no longer name settings.">
+<link rel="canonical" href="https://esysmax.com/psdzdata">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preload" href="/assets/fonts/Inter-var.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2?v=83c005d49d" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.min.css?v=d1eb7775b1">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-Sys MAX">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="What is PSdZData? Lite vs Full, versions and I-steps">
+<meta property="og:description" content="PSdZData explained: what E-Sys needs it for, Lite or Full, which version your BMW needs (I-step), and why newer packs no longer name settings.">
+<meta property="og:url" content="https://esysmax.com/psdzdata">
+<meta property="og:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What is PSdZData? Lite vs Full, versions and I-steps">
+<meta name="twitter:description" content="PSdZData explained: what E-Sys needs it for, Lite or Full, which version your BMW needs (I-step), and why newer packs no longer name settings.">
+<meta name="twitter:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta name="twitter:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=7f6659c355">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=5f744d2a0f">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=a8decb7fce">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1c3056e059">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"E-Sys MAX","item":"https://esysmax.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://esysmax.com/guides"},{"@type":"ListItem","position":3,"name":"What is PSdZData?","item":"https://esysmax.com/psdzdata"}]},{"@type":"TechArticle","@id":"https://esysmax.com/psdzdata#article","headline":"What is PSdZData? Lite vs Full, versions and I-steps","description":"PSdZData explained: what E-Sys needs it for, Lite or Full, which version your BMW needs (I-step), and why newer packs no longer name settings.","url":"https://esysmax.com/psdzdata","mainEntityOfPage":"https://esysmax.com/psdzdata","inLanguage":"en-US","datePublished":"2026-10-08","dateModified":"2026-10-08","image":"https://esysmax.com/assets/img/vehicle-order.jpg?v=14b444d8d3","author":{"@id":"https://esysmax.com/#organization"},"publisher":{"@id":"https://esysmax.com/#organization"},"about":[{"@type":"Thing","name":"BMW E-Sys"},{"@type":"Thing","name":"BMW coding"}]},{"@type":"Organization","@id":"https://esysmax.com/#organization","name":"KDR Coding","url":"https://esysmax.com/","logo":{"@type":"ImageObject","url":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","width":512,"height":512},"image":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://esysmax.com/contact","availableLanguage":"English"},"sameAs":["https://t.me/EsysMaxbot"]},{"@type":"FAQPage","@id":"https://esysmax.com/psdzdata#faq","mainEntity":[{"@type":"Question","name":"Is PSdZData included with E-Sys MAX?","acceptedAnswer":{"@type":"Answer","text":"No. PSdZData and E-Sys are BMW software. E-Sys MAX adds to the E-Sys and PSdZData you already have and finds them on your PC by itself."}},{"@type":"Question","name":"Do I need PSdZData Full for coding?","acceptedAnswer":{"@type":"Answer","text":"No. Lite is enough for coding. Full is only needed to flash (program) modules."}},{"@type":"Question","name":"Can I keep several PSdZData versions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each E-Sys version can point to its own pack. The E-Sys MAX launcher lets you pick the PSdZData for each E-Sys version."}},{"@type":"Question","name":"E-Sys says it cannot find a CAFD for a module. Why?","acceptedAnswer":{"@type":"Answer","text":"Most often the PSdZData is older than the car's I-step, so it does not know that module version yet. Use a newer pack and restart E-Sys."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="E-Sys MAX home"><picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="129px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="129" height="40" alt="E-Sys MAX"></picture></a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/guides">Guides</a><a href="/licence">Licence</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
+      <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>What is PSdZData?</h1>
+    <p>The data pack E-Sys cannot work without: what is in it, Lite or Full, and which version your car needs.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>PSdZData in one paragraph</h2>
+    <p><b>PSdZData</b> is BMW's data for its programming system (PSdZ). E-Sys reads it to understand your car: which modules exist for each series, the settings files (<b>CAFDs</b>) for every module and version, the rules that decide which settings fit your car's vehicle order, and, in the Full pack, the software files used for flashing. Without PSdZData, E-Sys can connect to a car but cannot read or change its coding.</p>
+
+    <h2>Lite or Full?</h2>
+    <table class="data">
+      <thead><tr><th>Pack</th><th>What it is for</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Pack">PSdZData Lite</td><td data-label="What it is for">Coding: reading and writing module settings, the vehicle order, the module list. Enough for almost everyone.</td><td data-label="Size">Smaller</td></tr>
+        <tr><td data-label="Pack">PSdZData Full</td><td data-label="What it is for">Everything in Lite plus the module software, needed for flashing (programming) modules and some retrofits.</td><td data-label="Size">Many times larger</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Which version does my car need?</h2>
+    <p>Every BMW leaves the factory with an <b>I-step</b> (integration level), a code such as <code>F020-17-03-503</code> or <code>G020-23-07-550</code>: the series, the year and month, and a number. Dealer updates move it forward. Your PSdZData must be <b>at least as new as your car's current I-step</b>. If the pack is older, E-Sys may not know some of the car's module versions, and reading or coding those modules fails.</p>
+    <p>A newer pack always works for an older car, so the simple rule is: use a recent pack. You see the car's I-step in E-Sys after reading the vehicle order (FA) and the module list (SVT).</p>
+
+    <h2>Telling E-Sys where it is</h2>
+    <p>E-Sys looks for PSdZData in the folder set in its settings (in <code>config\Esys.properties</code> this is <code>Path.PsdzHome</code>). After you add or replace a pack, restart E-Sys so it reads it again. The <a href="/download">E-Sys MAX launcher</a> finds the packs on your PC by itself and shows, for every installed E-Sys version, which PSdZData it uses.</p>
+
+    <h2>Why newer PSdZData does not name settings</h2>
+    <p>Since around 2016 BMW removes the names of the settings from the PSdZData it publishes. Older packs still had them; current packs show a dot (<b>.</b>) for most settings. G-series modules were created after that change, so no public BMW data names them at all. A newer pack makes your car supported, but it does not bring back names.</p>
+    <p>That gap is what <a href="/">E-Sys MAX</a> fills inside E-Sys: English names for thousands of settings, explanations of what a setting is linked to, ready-made changes for your car, and a way to name a setting yourself and share it.</p>
+
+    <h2>Questions</h2>
+    <details><summary>Is PSdZData included with E-Sys MAX?</summary><div class="answer"><p>No. PSdZData and E-Sys are BMW software. E-Sys MAX adds to the E-Sys and PSdZData you already have and finds them on your PC by itself.</p></div></details>
+    <details><summary>Do I need PSdZData Full for coding?</summary><div class="answer"><p>No. Lite is enough for coding. Full is only needed to flash (program) modules.</p></div></details>
+    <details><summary>Can I keep several PSdZData versions?</summary><div class="answer"><p>Yes. Each E-Sys version can point to its own pack. The E-Sys MAX launcher lets you pick the PSdZData for each E-Sys version.</p></div></details>
+    <details><summary>E-Sys says it cannot find a CAFD for a module. Why?</summary><div class="answer"><p>Most often the PSdZData is older than the car's I-step, so it does not know that module version yet. Use a newer pack and restart E-Sys.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Make sense of every setting</h2>
+      <p>E-Sys MAX names the settings BMW leaves as a dot. Try it free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="97px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="97" height="30" alt="E-Sys MAX" class="foot-logo" loading="lazy"></picture>
+        <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+        <p class="made-usa"><svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg><span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
+      </div>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guides">E-Sys coding guides</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
+      <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year>2026</span> KDR Coding, Los Angeles, California. All rights reserved.</span>
+      <span>Vehicle coding is at your own risk. Not affiliated with BMW AG. BMW and E-Sys are trademarks of BMW AG. E-Sys and PSdZData are not included.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.min.js?v=1a18cf42db" defer></script>
+</body>
+</html>

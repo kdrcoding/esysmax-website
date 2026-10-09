@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Sys error codes explained: C029, C074, C060, C045, C072</title>
+<meta name="description" content="What common BMW E-Sys errors mean and how to fix them: connection (C029, C074, C370), vehicle order (C060), coding (C045, C069) and PSdZData (C072).">
+<link rel="canonical" href="https://esysmax.com/e-sys-connection-errors">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preload" href="/assets/fonts/Inter-var.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2?v=83c005d49d" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.min.css?v=d1eb7775b1">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-Sys MAX">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="E-Sys error codes explained: C029, C074, C060, C045, C072">
+<meta property="og:description" content="What common BMW E-Sys errors mean and how to fix them: connection (C029, C074, C370), vehicle order (C060), coding (C045, C069) and PSdZData (C072).">
+<meta property="og:url" content="https://esysmax.com/e-sys-connection-errors">
+<meta property="og:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="E-Sys error codes explained: C029, C074, C060, C045, C072">
+<meta name="twitter:description" content="What common BMW E-Sys errors mean and how to fix them: connection (C029, C074, C370), vehicle order (C060), coding (C045, C069) and PSdZData (C072).">
+<meta name="twitter:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta name="twitter:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=7f6659c355">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=5f744d2a0f">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=a8decb7fce">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1c3056e059">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"E-Sys MAX","item":"https://esysmax.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://esysmax.com/guides"},{"@type":"ListItem","position":3,"name":"E-Sys error codes","item":"https://esysmax.com/e-sys-connection-errors"}]},{"@type":"TechArticle","@id":"https://esysmax.com/e-sys-connection-errors#article","headline":"E-Sys error codes explained, with fixes","description":"What common BMW E-Sys errors mean and how to fix them: connection (C029, C074, C370), vehicle order (C060), coding (C045, C069) and PSdZData (C072).","url":"https://esysmax.com/e-sys-connection-errors","mainEntityOfPage":"https://esysmax.com/e-sys-connection-errors","inLanguage":"en-US","datePublished":"2026-10-08","dateModified":"2026-10-08","image":"https://esysmax.com/assets/img/vehicle-order.jpg?v=14b444d8d3","author":{"@id":"https://esysmax.com/#organization"},"publisher":{"@id":"https://esysmax.com/#organization"},"about":[{"@type":"Thing","name":"BMW E-Sys"},{"@type":"Thing","name":"BMW coding"}]},{"@type":"Organization","@id":"https://esysmax.com/#organization","name":"KDR Coding","url":"https://esysmax.com/","logo":{"@type":"ImageObject","url":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","width":512,"height":512},"image":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://esysmax.com/contact","availableLanguage":"English"},"sameAs":["https://t.me/EsysMaxbot"]},{"@type":"FAQPage","@id":"https://esysmax.com/e-sys-connection-errors#faq","mainEntity":[{"@type":"Question","name":"Where does E-Sys write its log?","acceptedAnswer":{"@type":"Answer","text":"In the log folder of your E-Sys data folder. The error window's Details >> button shows the full message, which is often enough. E-Sys MAX's problem report collects the logs for you."}},{"@type":"Question","name":"Can a failed coding damage the car?","acceptedAnswer":{"@type":"Answer","text":"A coding that stops in the middle usually leaves the module with its old coding or with faults until it is coded again. Keep a charger on, keep the original coding file, and code it back if a feature misbehaves."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="E-Sys MAX home"><picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="129px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="129" height="40" alt="E-Sys MAX"></picture></a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/guides">Guides</a><a href="/licence">Licence</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
+      <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>E-Sys error codes explained</h1>
+    <p>The E-Sys messages people hit most, what they usually mean, and what to check first.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <p>E-Sys shows an error code with a short English line. The line says what failed, rarely why. Below are the common ones with the usual causes, starting with connection problems, which are by far the most frequent.</p>
+
+    <h2>Connection errors</h2>
+    <h3>C029: "Failed to open connection with the given settings."</h3>
+    <p>E-Sys tried to connect with the option chosen in its Connect window and the car (or ICOM) did not take the connection.</p>
+    <ul>
+      <li>With <b>Connection via gateway URL</b>: the address is old or wrong. Car addresses on an ENET cable start with 169.254 and use port 6801.</li>
+      <li>With an <b>ICOM</b>: the address or port is wrong (the gateway is normally port 50160), or the ICOM is <b>reserved by another PC or by ISTA</b>. Release it there.</li>
+      <li>Another program, or an old E-Sys still running in the background, is holding the connection.</li>
+    </ul>
+
+    <h3>C074: "Detection of available vehicles failed!"</h3>
+    <p>E-Sys's car search did not get through. Check that the network adapter is up and has an address, turn off VPN software, and allow E-Sys's Java (javaw.exe) in Windows Firewall and any security suite.</p>
+
+    <h3>C078: "No connection established."</h3>
+    <p>You pressed something that needs the car before E-Sys was connected, or the connection dropped (ignition off, cable moved, laptop went to sleep). Connect again.</p>
+
+    <h3>C370: "No vehicle found with ID … Available vehicles: …"</h3>
+    <p>With <b>Connection via VIN</b>, E-Sys looked for the car it remembered and it did not answer this time. Pick the car again from the list; if the list is empty, see <a href="/e-sys-enet-icom-connection">ENET cable or ICOM</a>.</p>
+
+    <h3>G013: "Connection via VIN is currently not possible."</h3>
+    <p>No car answered E-Sys's search, so there is nothing to pick. Ignition on, cable or ICOM connected, and if you use an ICOM choose <b>Connection via ICOM/Ethernet</b> instead.</p>
+
+    <h3>C058: "Reading VIN from master failed."</h3>
+    <p>E-Sys is connected but the car's main module did not tell its VIN. Usually a short connection problem or a module still waking up: wait a moment with the ignition on and try again.</p>
+
+    <h2>Vehicle order and module list</h2>
+    <h3>C060: "Read FA failed! Possibly there is no FA stored in the VCM."</h3>
+    <p>The vehicle order (FA) could not be read from the car. Check the connection first. On a car where the vehicle order was never written (some replaced modules), it really is missing and has to be written again.</p>
+    <h3>C062: "Read FP failed! Possibly there is no FP stored in the VCM."</h3>
+    <p>The same for the vehicle profile (FP), which E-Sys calculates from the vehicle order. If the FA reads fine, calculate the FP from it in E-Sys.</p>
+    <h3>C043: "Detection of integration step failed."</h3>
+    <p>E-Sys could not work out the car's I-step. Usually the vehicle order or module list was not read yet, or the PSdZData is older than the car. See <a href="/psdzdata">What is PSdZData?</a></p>
+
+    <h2>Coding errors</h2>
+    <h3>C045 / C047: "Generating of NCD for CAFs … failed!"</h3>
+    <p>E-Sys could not build the coding file for a module. The usual causes: the vehicle order was not activated (press <b>Activate FA</b> first), the PSdZData does not contain that CAFD version, or the selected CAFD does not belong to this car.</p>
+    <h3>C069: "NCD read from ECU … for CAF … failed!"</h3>
+    <p>Reading a module's coding failed: the module did not answer, is asleep, or the CAFD selected does not match the module. Read the module list (SVT) again and select the CAFD under that module.</p>
+
+    <h2>PSdZData errors</h2>
+    <h3>C072: "Failed to set PSdZ root to …, because it's no directory!"</h3>
+    <p>E-Sys's PSdZData folder setting points to a folder that does not exist (a pack that was moved, renamed or deleted). Set the folder to where your PSdZData is now and restart E-Sys.</p>
+
+    <h2>General</h2>
+    <h3>C027: "Runtime error occurred."</h3>
+    <p>Something failed inside E-Sys. Press <b>Details &gt;&gt;</b> to see the actual reason, which is usually one of the problems above. Restart E-Sys if it keeps coming back.</p>
+
+    <p>The <a href="/download">E-Sys MAX launcher</a> has a <b>car connection check</b> that finds most connection causes for you (the cable, the address, VPN, firewall, the ICOM, an old E-Sys still running) and a <b>problem report</b> that collects E-Sys's logs into one file you can send us.</p>
+
+    <h2>Questions</h2>
+    <details><summary>Where does E-Sys write its log?</summary><div class="answer"><p>In the log folder of your E-Sys data folder. The error window's <b>Details &gt;&gt;</b> button shows the full message, which is often enough. E-Sys MAX's problem report collects the logs for you.</p></div></details>
+    <details><summary>Can a failed coding damage the car?</summary><div class="answer"><p>A coding that stops in the middle usually leaves the module with its old coding or with faults until it is coded again. Keep a charger on, keep the original coding file, and code it back if a feature misbehaves.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Find the cause in seconds</h2>
+      <p>The E-Sys MAX launcher checks the connection, the firewall and the ICOM for you. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="97px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="97" height="30" alt="E-Sys MAX" class="foot-logo" loading="lazy"></picture>
+        <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+        <p class="made-usa"><svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg><span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
+      </div>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guides">E-Sys coding guides</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
+      <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year>2026</span> KDR Coding, Los Angeles, California. All rights reserved.</span>
+      <span>Vehicle coding is at your own risk. Not affiliated with BMW AG. BMW and E-Sys are trademarks of BMW AG. E-Sys and PSdZData are not included.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.min.js?v=1a18cf42db" defer></script>
+</body>
+</html>

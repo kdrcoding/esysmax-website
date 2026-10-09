@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connect E-Sys to your BMW: ENET cable or ICOM setup</title>
+<meta name="description" content="How E-Sys finds your BMW over an ENET cable or a BMW ICOM: Connection via VIN, gateway URL, ICOM/Ethernet port 50160, DoIP, and what to check.">
+<link rel="canonical" href="https://esysmax.com/e-sys-enet-icom-connection">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preload" href="/assets/fonts/Inter-var.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2?v=83c005d49d" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.min.css?v=d1eb7775b1">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-Sys MAX">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Connect E-Sys to your BMW: ENET cable or ICOM setup">
+<meta property="og:description" content="How E-Sys finds your BMW over an ENET cable or a BMW ICOM: Connection via VIN, gateway URL, ICOM/Ethernet port 50160, DoIP, and what to check.">
+<meta property="og:url" content="https://esysmax.com/e-sys-enet-icom-connection">
+<meta property="og:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Connect E-Sys to your BMW: ENET cable or ICOM setup">
+<meta name="twitter:description" content="How E-Sys finds your BMW over an ENET cable or a BMW ICOM: Connection via VIN, gateway URL, ICOM/Ethernet port 50160, DoIP, and what to check.">
+<meta name="twitter:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta name="twitter:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=7f6659c355">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=5f744d2a0f">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=a8decb7fce">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1c3056e059">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"E-Sys MAX","item":"https://esysmax.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://esysmax.com/guides"},{"@type":"ListItem","position":3,"name":"ENET cable or ICOM","item":"https://esysmax.com/e-sys-enet-icom-connection"}]},{"@type":"TechArticle","@id":"https://esysmax.com/e-sys-enet-icom-connection#article","headline":"Connect E-Sys to your BMW: ENET cable or ICOM","description":"How E-Sys finds your BMW over an ENET cable or a BMW ICOM: Connection via VIN, gateway URL, ICOM/Ethernet port 50160, DoIP, and what to check.","url":"https://esysmax.com/e-sys-enet-icom-connection","mainEntityOfPage":"https://esysmax.com/e-sys-enet-icom-connection","inLanguage":"en-US","datePublished":"2026-10-08","dateModified":"2026-10-08","image":"https://esysmax.com/assets/img/vehicle-order.jpg?v=14b444d8d3","author":{"@id":"https://esysmax.com/#organization"},"publisher":{"@id":"https://esysmax.com/#organization"},"about":[{"@type":"Thing","name":"BMW E-Sys"},{"@type":"Thing","name":"BMW coding"}]},{"@type":"Organization","@id":"https://esysmax.com/#organization","name":"KDR Coding","url":"https://esysmax.com/","logo":{"@type":"ImageObject","url":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","width":512,"height":512},"image":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://esysmax.com/contact","availableLanguage":"English"},"sameAs":["https://t.me/EsysMaxbot"]},{"@type":"FAQPage","@id":"https://esysmax.com/e-sys-enet-icom-connection#faq","mainEntity":[{"@type":"Question","name":"Can I use a Bluetooth or Wi-Fi OBD dongle with E-Sys?","acceptedAnswer":{"@type":"Answer","text":"No. Dongles made for phone apps (ELM327, OBDLink and similar) do not speak the Ethernet diagnostics E-Sys uses. You need an ENET cable or a BMW ICOM."}},{"@type":"Question","name":"My laptop has no network port. What now?","acceptedAnswer":{"@type":"Answer","text":"A USB or USB-C to Ethernet adapter works with an ENET cable."}},{"@type":"Question","name":"Does E-Sys MAX work with an ICOM?","acceptedAnswer":{"@type":"Answer","text":"Yes. When E-Sys is connected through an ICOM/Ethernet, E-Sys MAX reaches the car through the same ICOM for the fault scan, the full backup and module info, and reads the battery voltage when you click it."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="E-Sys MAX home"><picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="129px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="129" height="40" alt="E-Sys MAX"></picture></a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/guides">Guides</a><a href="/licence">Licence</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
+      <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>Connect E-Sys to your BMW: ENET cable or ICOM</h1>
+    <p>How E-Sys finds the car, which option to pick in its Connect window, and what to check when the list stays empty.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>Two ways to reach the car</h2>
+    <ul>
+      <li><b>ENET cable</b>: an Ethernet cable with an OBD plug, straight from the PC to the car. Cheap and the most common way to code.</li>
+      <li><b>BMW ICOM</b> (ICOM A, A2, A3 or ICOM Next): BMW's workshop interface. It sits on the OBD port and joins your network by cable or, for the ICOM Next, by Wi-Fi.</li>
+    </ul>
+
+    <h2>With an ENET cable</h2>
+    <ol>
+      <li>Plug the cable into the car's OBD port and the PC's network port (or a USB / USB-C network adapter). Connect a charger and switch the ignition on.</li>
+      <li>Leave the network adapter on <b>Obtain an IP address automatically</b>. The car does not hand out addresses: within about a minute Windows gives the adapter a <b>169.254.x.x</b> address by itself.</li>
+      <li>In E-Sys press <b>Connect</b>, choose your car's series and pick <b>Connection via VIN</b>. E-Sys lists the car as its VIN with the gateway's address, for example <code>WBA…_DIAGADR10 (tcp://169.254.1.1:6801)</code>.</li>
+      <li>If no car is listed, choose <b>Connection via gateway URL</b> and enter the gateway's address with port 6801, for example <code>tcp://169.254.1.1:6801</code>.</li>
+    </ol>
+    <p>How E-Sys finds the car: it sends a short vehicle-search message to every network adapter of the PC (UDP port 6811, and port 13400 for newer DoIP cars) and lists every gateway that answers. That is why a VPN or a firewall can make the list stay empty.</p>
+
+    <h2>With an ICOM</h2>
+    <p>E-Sys does not search for ICOMs: you tell it the ICOM's address.</p>
+    <ol>
+      <li>Plug the ICOM into the car's OBD port and make sure the PC is on the same network: the ICOM's network cable to the PC or to the same router, or the ICOM Next's Wi-Fi.</li>
+      <li>Find the ICOM's IP address, for example in your router's list of connected devices.</li>
+      <li>In E-Sys press <b>Connect</b> and choose <b>Connection via ICOM/Ethernet</b>. Enter <code>tcp://&lt;ICOM address&gt;:50160</code>, for example <code>tcp://192.168.68.200:50160</code>.</li>
+    </ol>
+    <p>Why 50160: the ICOM gives every module its own port, the <b>ICOM base port</b> (50000 unless changed in E-Sys's settings) plus 10 times the module's diagnostic address. The gateway is address 0x10 (16), so 50000 + 160 = <b>50160</b>.</p>
+    <p>An ICOM can be <b>reserved</b> by another PC or by ISTA. E-Sys then only says it failed to open the connection (error C029). Release the ICOM there and connect again.</p>
+
+    <h2>Newer cars: DoIP</h2>
+    <p>Newer BMWs can talk <b>DoIP</b> (diagnostics over IP). E-Sys searches for them the same way and lists them with port 13400, for example <code>…_DIAGADR0010 (tcp://169.254.1.1:13400)</code>.</p>
+
+    <h2>The list stays empty: what to check</h2>
+    <ul>
+      <li><b>Ignition on.</b> Press Start without the brake. The engine does not need to run.</li>
+      <li><b>The cable.</b> A working ENET cable bridges pins 3 and 8 of the OBD plug to wake the car's Ethernet. Cheap cables sometimes leave that out.</li>
+      <li><b>The address.</b> With an ENET cable the adapter must have a 169.254 address. A 192.168 address means the cable goes to a router or an ICOM, or the adapter has a fixed IP.</li>
+      <li><b>VPN and firewall.</b> Turn off VPN software. Allow E-Sys's Java (javaw.exe in the E-Sys folder) in Windows Firewall and in any security suite's firewall.</li>
+      <li><b>An old E-Sys still running.</b> An E-Sys whose window closed can keep running in the background and hold the connection. End it in Task Manager (java or javaw).</li>
+    </ul>
+    <p>The <a href="/download">E-Sys MAX launcher</a> checks all of this for you with its <b>car connection check</b>: it searches for the car the way E-Sys does (HSFZ and DoIP), tests the ICOM E-Sys is set to, reads the firewall rules, finds an old E-Sys still running, and tells you which option to pick in E-Sys. See also <a href="/e-sys-connection-errors">E-Sys connection errors explained</a>.</p>
+
+    <h2>Questions</h2>
+    <details><summary>Can I use a Bluetooth or Wi-Fi OBD dongle with E-Sys?</summary><div class="answer"><p>No. Dongles made for phone apps (ELM327, OBDLink and similar) do not speak the Ethernet diagnostics E-Sys uses. You need an ENET cable or a BMW ICOM.</p></div></details>
+    <details><summary>My laptop has no network port. What now?</summary><div class="answer"><p>A USB or USB-C to Ethernet adapter works with an ENET cable.</p></div></details>
+    <details><summary>Does E-Sys MAX work with an ICOM?</summary><div class="answer"><p>Yes. When E-Sys is connected through an ICOM/Ethernet, E-Sys MAX reaches the car through the same ICOM for the fault scan, the full backup and module info, and reads the battery voltage when you click it.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Let the launcher find the problem</h2>
+      <p>The E-Sys MAX car connection check tells you what is wrong in seconds. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="97px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="97" height="30" alt="E-Sys MAX" class="foot-logo" loading="lazy"></picture>
+        <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+        <p class="made-usa"><svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg><span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
+      </div>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guides">E-Sys coding guides</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
+      <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year>2026</span> KDR Coding, Los Angeles, California. All rights reserved.</span>
+      <span>Vehicle coding is at your own risk. Not affiliated with BMW AG. BMW and E-Sys are trademarks of BMW AG. E-Sys and PSdZData are not included.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.min.js?v=1a18cf42db" defer></script>
+</body>
+</html>

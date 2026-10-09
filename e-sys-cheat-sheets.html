@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Sys cheat sheets for BMW F and G series: how to use them</title>
+<meta name="description" content="What an E-Sys cheat sheet is, how to read one, why G-series settings show as a dot, and how to apply a change safely with the FDL-Editor.">
+<link rel="canonical" href="https://esysmax.com/e-sys-cheat-sheets">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preload" href="/assets/fonts/Inter-var.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2?v=83c005d49d" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.min.css?v=d1eb7775b1">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-Sys MAX">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="E-Sys cheat sheets for BMW F and G series: how to use them">
+<meta property="og:description" content="What an E-Sys cheat sheet is, how to read one, why G-series settings show as a dot, and how to apply a change safely with the FDL-Editor.">
+<meta property="og:url" content="https://esysmax.com/e-sys-cheat-sheets">
+<meta property="og:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="E-Sys cheat sheets for BMW F and G series: how to use them">
+<meta name="twitter:description" content="What an E-Sys cheat sheet is, how to read one, why G-series settings show as a dot, and how to apply a change safely with the FDL-Editor.">
+<meta name="twitter:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta name="twitter:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=7f6659c355">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=5f744d2a0f">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=a8decb7fce">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1c3056e059">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"E-Sys MAX","item":"https://esysmax.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://esysmax.com/guides"},{"@type":"ListItem","position":3,"name":"E-Sys cheat sheets","item":"https://esysmax.com/e-sys-cheat-sheets"}]},{"@type":"TechArticle","@id":"https://esysmax.com/e-sys-cheat-sheets#article","headline":"E-Sys cheat sheets for BMW F and G series: how to use them","description":"What an E-Sys cheat sheet is, how to read one, why G-series settings show as a dot, and how to apply a change safely with the FDL-Editor.","url":"https://esysmax.com/e-sys-cheat-sheets","mainEntityOfPage":"https://esysmax.com/e-sys-cheat-sheets","inLanguage":"en-US","datePublished":"2026-10-08","dateModified":"2026-10-08","image":"https://esysmax.com/assets/img/vehicle-order.jpg?v=14b444d8d3","author":{"@id":"https://esysmax.com/#organization"},"publisher":{"@id":"https://esysmax.com/#organization"},"about":[{"@type":"Thing","name":"BMW E-Sys"},{"@type":"Thing","name":"BMW coding"}]},{"@type":"Organization","@id":"https://esysmax.com/#organization","name":"KDR Coding","url":"https://esysmax.com/","logo":{"@type":"ImageObject","url":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","width":512,"height":512},"image":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://esysmax.com/contact","availableLanguage":"English"},"sameAs":["https://t.me/EsysMaxbot"]},{"@type":"FAQPage","@id":"https://esysmax.com/e-sys-cheat-sheets#faq","mainEntity":[{"@type":"Question","name":"Are cheat sheets the same for every car?","acceptedAnswer":{"@type":"Answer","text":"No. A setting depends on the module, its CAFD version and the series. A line can be right for one car and wrong for another, so check what it was tested on."}},{"@type":"Question","name":"Where can I find a G-series cheat sheet?","acceptedAnswer":{"@type":"Answer","text":"G-series lists are smaller because BMW never published names for those modules. Coding forums and open community lists have some. E-Sys MAX brings the open community sheets in by itself and adds new G-series names with every update."}},{"@type":"Question","name":"What if a change does not work?","acceptedAnswer":{"@type":"Answer","text":"Code the module's saved coding file back. In E-Sys MAX, Coding history shows exactly which settings changed and opens the older version to put it back."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="E-Sys MAX home"><picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="129px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="129" height="40" alt="E-Sys MAX"></picture></a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/guides">Guides</a><a href="/licence">Licence</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
+      <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>E-Sys cheat sheets: how to use them</h1>
+    <p>What a cheat sheet is, how to read one, and how to apply a change safely, on F-series and G-series cars.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>What is a cheat sheet?</h2>
+    <p>A <b>cheat sheet</b> is a list of coding changes people have tried on real cars. Each line tells you, for one feature:</p>
+    <ul>
+      <li><b>the module</b> it lives in (for example the head unit, the body module, the instrument cluster or the footwell module),</li>
+      <li><b>the setting</b>: its name, or where it sits in the module's settings when it has no name,</li>
+      <li><b>the value</b> to set (often from <code>nicht_aktiv</code>, off, to <code>aktiv</code>, on),</li>
+      <li>and often <b>which series and CAFD versions</b> it was tested on.</li>
+    </ul>
+    <p>Cheat sheets exist because E-Sys itself does not explain what a setting does. Many come from coding forums; some are shared as XML files that tools can read.</p>
+
+    <h2>How to apply a line from a cheat sheet</h2>
+    <ol>
+      <li>Connect, read the vehicle order and press <b>Activate FA</b>, then read the module list (SVT). Our <a href="/bmw-e-sys-coding">beginner's guide</a> has every step.</li>
+      <li>Select the module named on the sheet and <b>Read Coding Data</b>. Keep this file: it is your way back.</li>
+      <li>Right-click the module's CAFD and choose <b>Edit FDL</b>. Find the setting, change it to the value on the sheet, and save.</li>
+      <li>Select the CAFD and press <b>Code</b>. Test the feature with the ignition off and on again.</li>
+    </ol>
+    <p><b>Check the version.</b> A setting can move between CAFD versions, and a line made for one series can mean something else on another. Prefer lines tested on your series, and change one thing at a time.</p>
+
+    <h2>Why do many settings show as "."?</h2>
+    <p>Since around 2016 BMW removes the names of settings from the data E-Sys uses, so E-Sys shows a dot for most of them. F-series modules existed before that, so older data still names most of them. <b>G-series modules never had names in public data</b>, which makes G-series cheat sheets short and hard to follow: they can only say "block 3000, byte 12, bit 2".</p>
+
+    <h2>Cheat sheets inside E-Sys, in English</h2>
+    <p><a href="/">E-Sys MAX</a> puts the cheat sheets where you need them: open a module in the FDL-Editor and its <b>What can I code?</b> list shows every ready-made change that fits your car, what is already on and what is off, in plain English. One click applies it, it is checked before you code, and the write still waits for your Yes.</p>
+    <ul>
+      <li>Thousands of settings named in English, also the ones E-Sys shows as a dot.</li>
+      <li>Free community cheat sheets from the BMW coding community are fetched for you.</li>
+      <li><b>Code several changes</b>: tick changes in several modules and code them in one go, module by module.</li>
+      <li>Know what a setting does? Name it and press <b>Help improve names</b>: names we add earn you free licence time.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <details><summary>Are cheat sheets the same for every car?</summary><div class="answer"><p>No. A setting depends on the module, its CAFD version and the series. A line can be right for one car and wrong for another, so check what it was tested on.</p></div></details>
+    <details><summary>Where can I find a G-series cheat sheet?</summary><div class="answer"><p>G-series lists are smaller because BMW never published names for those modules. Coding forums and open community lists have some. E-Sys MAX brings the open community sheets in by itself and adds new G-series names with every update.</p></div></details>
+    <details><summary>What if a change does not work?</summary><div class="answer"><p>Code the module's saved coding file back. In E-Sys MAX, Coding history shows exactly which settings changed and opens the older version to put it back.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Every ready-made change, in plain English</h2>
+      <p>E-Sys MAX shows what you can code on your car, inside E-Sys. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="97px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="97" height="30" alt="E-Sys MAX" class="foot-logo" loading="lazy"></picture>
+        <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+        <p class="made-usa"><svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg><span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
+      </div>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/guides">E-Sys coding guides</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
+      <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/privacy">Privacy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year>2026</span> KDR Coding, Los Angeles, California. All rights reserved.</span>
+      <span>Vehicle coding is at your own risk. Not affiliated with BMW AG. BMW and E-Sys are trademarks of BMW AG. E-Sys and PSdZData are not included.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.min.js?v=1a18cf42db" defer></script>
+</body>
+</html>

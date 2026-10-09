@@ -1,0 +1,67 @@
+title: E-Sys cheat sheets for BMW F and G series: how to use them
+description: What an E-Sys cheat sheet is, how to read one, why G-series settings show as a dot, and how to apply a change safely with the FDL-Editor.
+crumb: E-Sys cheat sheets
+type: article
+parent: guides
+published: 2026-10-08
+headline: E-Sys cheat sheets for BMW F and G series: how to use them
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>E-Sys cheat sheets: how to use them</h1>
+    <p>What a cheat sheet is, how to read one, and how to apply a change safely, on F-series and G-series cars.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>What is a cheat sheet?</h2>
+    <p>A <b>cheat sheet</b> is a list of coding changes people have tried on real cars. Each line tells you, for one feature:</p>
+    <ul>
+      <li><b>the module</b> it lives in (for example the head unit, the body module, the instrument cluster or the footwell module),</li>
+      <li><b>the setting</b>: its name, or where it sits in the module's settings when it has no name,</li>
+      <li><b>the value</b> to set (often from <code>nicht_aktiv</code>, off, to <code>aktiv</code>, on),</li>
+      <li>and often <b>which series and CAFD versions</b> it was tested on.</li>
+    </ul>
+    <p>Cheat sheets exist because E-Sys itself does not explain what a setting does. Many come from coding forums; some are shared as XML files that tools can read.</p>
+
+    <h2>How to apply a line from a cheat sheet</h2>
+    <ol>
+      <li>Connect, read the vehicle order and press <b>Activate FA</b>, then read the module list (SVT). Our <a href="/bmw-e-sys-coding">beginner's guide</a> has every step.</li>
+      <li>Select the module named on the sheet and <b>Read Coding Data</b>. Keep this file: it is your way back.</li>
+      <li>Right-click the module's CAFD and choose <b>Edit FDL</b>. Find the setting, change it to the value on the sheet, and save.</li>
+      <li>Select the CAFD and press <b>Code</b>. Test the feature with the ignition off and on again.</li>
+    </ol>
+    <p><b>Check the version.</b> A setting can move between CAFD versions, and a line made for one series can mean something else on another. Prefer lines tested on your series, and change one thing at a time.</p>
+
+    <h2>Why do many settings show as "."?</h2>
+    <p>Since around 2016 BMW removes the names of settings from the data E-Sys uses, so E-Sys shows a dot for most of them. F-series modules existed before that, so older data still names most of them. <b>G-series modules never had names in public data</b>, which makes G-series cheat sheets short and hard to follow: they can only say "block 3000, byte 12, bit 2".</p>
+
+    <h2>Cheat sheets inside E-Sys, in English</h2>
+    <p><a href="/">E-Sys MAX</a> puts the cheat sheets where you need them: open a module in the FDL-Editor and its <b>What can I code?</b> list shows every ready-made change that fits your car, what is already on and what is off, in plain English. One click applies it, it is checked before you code, and the write still waits for your Yes.</p>
+    <ul>
+      <li>Thousands of settings named in English, also the ones E-Sys shows as a dot.</li>
+      <li>Free community cheat sheets from the BMW coding community are fetched for you.</li>
+      <li><b>Code several changes</b>: tick changes in several modules and code them in one go, module by module.</li>
+      <li>Know what a setting does? Name it and press <b>Help improve names</b>: names we add earn you free licence time.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <details><summary>Are cheat sheets the same for every car?</summary><div class="answer"><p>No. A setting depends on the module, its CAFD version and the series. A line can be right for one car and wrong for another, so check what it was tested on.</p></div></details>
+    <details><summary>Where can I find a G-series cheat sheet?</summary><div class="answer"><p>G-series lists are smaller because BMW never published names for those modules. Coding forums and open community lists have some. E-Sys MAX brings the open community sheets in by itself and adds new G-series names with every update.</p></div></details>
+    <details><summary>What if a change does not work?</summary><div class="answer"><p>Code the module's saved coding file back. In E-Sys MAX, Coding history shows exactly which settings changed and opens the older version to put it back.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Every ready-made change, in plain English</h2>
+      <p>E-Sys MAX shows what you can code on your car, inside E-Sys. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download">{icon:download} Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>

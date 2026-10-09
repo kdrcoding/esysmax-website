@@ -1,0 +1,73 @@
+title: BMW E-Sys coding: a complete beginner's guide (2026)
+description: How BMW E-Sys coding works, what you need (E-Sys, PSdZData, ENET cable or ICOM, charger) and every step from reading the car to coding a module.
+crumb: E-Sys coding for beginners
+type: article
+parent: guides
+published: 2026-10-08
+headline: BMW E-Sys coding: a complete beginner's guide
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>BMW E-Sys coding: a complete beginner's guide</h1>
+    <p>What E-Sys is, what you need, and every step from connecting to the car to coding your first change, safely.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>What is E-Sys?</h2>
+    <p><b>E-Sys</b> is BMW's own engineering software for coding and programming the control modules (ECUs) of BMW's <b>F series, G series and I series</b> cars, and of the MINI and Rolls-Royce models built on the same electronics. Coding means changing a module's settings: switching a feature on or off, changing how long a light stays on, or making a retrofitted part work. Programming (flashing) means replacing a module's software.</p>
+    <p>E-Sys works on settings files called <b>CAFDs</b>. Each module has one, and E-Sys turns it into an editable file (an <b>NCD</b>) with every setting of that module. You change the values you want and E-Sys writes them back to the module.</p>
+
+    <h2>What you need</h2>
+    <ul>
+      <li><b>A Windows PC</b> (Windows 10 or 11). A laptop you can bring to the car is easiest.</li>
+      <li><b>BMW E-Sys</b>, installed on that PC.</li>
+      <li><b>PSdZData</b>: BMW's data pack E-Sys needs to know your car's modules. The Lite pack is enough for coding; the Full pack is only needed for flashing. See <a href="/psdzdata">What is PSdZData?</a></li>
+      <li><b>A connection to the car</b>: an <b>ENET cable</b> (Ethernet to the OBD port) or a <b>BMW ICOM</b>. See <a href="/e-sys-enet-icom-connection">ENET cable or ICOM</a>.</li>
+      <li><b>A battery charger</b> on the car while you code. A dropping battery voltage is the most common reason a coding goes wrong.</li>
+    </ul>
+    <p>Bluetooth and Wi-Fi OBD dongles made for phone apps cannot connect E-Sys, and K+DCAN cables are for the older E series.</p>
+
+    <h2>Before you start</h2>
+    <ul>
+      <li>Connect the charger, switch the ignition on (press Start without the brake) and keep the engine off.</li>
+      <li>Turn off VPN software on the PC; it can send E-Sys's car search the wrong way.</li>
+      <li>Make a <b>backup</b> of every module's coding before you change anything, so you can always go back.</li>
+    </ul>
+
+    <h2>Step by step: your first coding change</h2>
+    <ol>
+      <li><b>Connect.</b> Plug the ENET cable into the car's OBD port and the PC (or connect the ICOM). In E-Sys press <b>Connect</b>, pick your car's series and choose <b>Connection via VIN</b>; your car is listed with its VIN. With an ICOM choose <b>Connection via ICOM/Ethernet</b> instead.</li>
+      <li><b>Read the vehicle order.</b> Open <b>Expert Mode &gt; Coding</b>, press <b>Read</b> under the vehicle order (FA) and then <b>Activate FA</b>. The vehicle order is the list of everything your car was built with; E-Sys uses it to know which settings fit.</li>
+      <li><b>Read the module list.</b> Press <b>Read SVT</b>. E-Sys lists every module of the car with its CAFD.</li>
+      <li><b>Read the coding data.</b> Select the module you want to change (for example the head unit or the body module), then <b>Read Coding Data</b>. E-Sys saves the module's current coding as an NCD file. Keep a copy: this is your way back.</li>
+      <li><b>Edit.</b> Right-click the module's CAFD and choose <b>Edit FDL</b>. The FDL-Editor opens with every setting. Find the one you want and change its value, for example from <code>nicht_aktiv</code> (off) to <code>aktiv</code> (on). Save.</li>
+      <li><b>Code.</b> Back on the Coding page, select the module's CAFD and press <b>Code</b> (in some E-Sys versions <b>Code FDL</b> or <b>Code NCD</b>). E-Sys writes the new coding and shows a report.</li>
+      <li><b>Test.</b> Switch the ignition off and on again and try the feature. If something is not right, code the saved NCD back.</li>
+    </ol>
+
+    <h2>Why are the settings called "." or in German?</h2>
+    <p>Setting names come from BMW's data. Since around 2016 BMW removes the names from the PSdZData it publishes, so many settings in current E-Sys show only as a dot, and the ones that are named are short German abbreviations. That is why coders use <a href="/e-sys-cheat-sheets">cheat sheets</a>: lists of which setting does what.</p>
+    <p><a href="/">E-Sys MAX</a> adds the missing half inside E-Sys: English names and explanations for thousands of settings, ready-made changes for your car, a full backup in one click and a history of every change. Every write to the car still waits for your Yes.</p>
+
+    <h2>Questions</h2>
+    <details><summary>Is E-Sys coding safe?</summary><div class="answer"><p>Coding changes settings, not the module's software, so it is the gentler of the two. The real risks are a weak battery, a lost connection in the middle of a write, and a wrong value. Use a charger, back up first, change one thing at a time, and keep the original NCD so you can put it back.</p></div></details>
+    <details><summary>Which E-Sys version should I use?</summary><div class="answer"><p>A recent version works best with recent PSdZData and G-series cars. Versions 3.x run older F-series work fine; versions 22.x to 25.x handle current cars and DoIP. E-Sys MAX works with E-Sys 3.x up to 25.x and was tested with 25.10, 24.06, 22.10, 22.06 and 3.40.</p></div></details>
+    <details><summary>Can I code a G-series BMW with E-Sys?</summary><div class="answer"><p>Yes. The steps are the same. G-series modules have far fewer named settings in public data, so English names and ready-made changes matter even more there.</p></div></details>
+    <details><summary>Do I need to flash to code?</summary><div class="answer"><p>No. Most coding changes need no flashing. Flashing is only needed to update a module's software or when a retrofit requires it, and then you need PSdZData Full.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Code your BMW in plain English</h2>
+      <p>E-Sys MAX works inside your own E-Sys. Try every feature free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download">{icon:download} Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>

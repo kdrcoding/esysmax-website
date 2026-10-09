@@ -1,0 +1,60 @@
+title: What is PSdZData? Lite vs Full, versions and I-steps
+description: PSdZData explained: what E-Sys needs it for, Lite or Full, which version your BMW needs (I-step), and why newer packs no longer name settings.
+crumb: What is PSdZData?
+type: article
+parent: guides
+published: 2026-10-08
+headline: What is PSdZData? Lite vs Full, versions and I-steps
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>What is PSdZData?</h1>
+    <p>The data pack E-Sys cannot work without: what is in it, Lite or Full, and which version your car needs.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>PSdZData in one paragraph</h2>
+    <p><b>PSdZData</b> is BMW's data for its programming system (PSdZ). E-Sys reads it to understand your car: which modules exist for each series, the settings files (<b>CAFDs</b>) for every module and version, the rules that decide which settings fit your car's vehicle order, and, in the Full pack, the software files used for flashing. Without PSdZData, E-Sys can connect to a car but cannot read or change its coding.</p>
+
+    <h2>Lite or Full?</h2>
+    <table class="data">
+      <thead><tr><th>Pack</th><th>What it is for</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td>PSdZData Lite</td><td>Coding: reading and writing module settings, the vehicle order, the module list. Enough for almost everyone.</td><td>Smaller</td></tr>
+        <tr><td>PSdZData Full</td><td>Everything in Lite plus the module software, needed for flashing (programming) modules and some retrofits.</td><td>Many times larger</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Which version does my car need?</h2>
+    <p>Every BMW leaves the factory with an <b>I-step</b> (integration level), a code such as <code>F020-17-03-503</code> or <code>G020-23-07-550</code>: the series, the year and month, and a number. Dealer updates move it forward. Your PSdZData must be <b>at least as new as your car's current I-step</b>. If the pack is older, E-Sys may not know some of the car's module versions, and reading or coding those modules fails.</p>
+    <p>A newer pack always works for an older car, so the simple rule is: use a recent pack. You see the car's I-step in E-Sys after reading the vehicle order (FA) and the module list (SVT).</p>
+
+    <h2>Telling E-Sys where it is</h2>
+    <p>E-Sys looks for PSdZData in the folder set in its settings (in <code>config\Esys.properties</code> this is <code>Path.PsdzHome</code>). After you add or replace a pack, restart E-Sys so it reads it again. The <a href="/download">E-Sys MAX launcher</a> finds the packs on your PC by itself and shows, for every installed E-Sys version, which PSdZData it uses.</p>
+
+    <h2>Why newer PSdZData does not name settings</h2>
+    <p>Since around 2016 BMW removes the names of the settings from the PSdZData it publishes. Older packs still had them; current packs show a dot (<b>.</b>) for most settings. G-series modules were created after that change, so no public BMW data names them at all. A newer pack makes your car supported, but it does not bring back names.</p>
+    <p>That gap is what <a href="/">E-Sys MAX</a> fills inside E-Sys: English names for thousands of settings, explanations of what a setting is linked to, ready-made changes for your car, and a way to name a setting yourself and share it.</p>
+
+    <h2>Questions</h2>
+    <details><summary>Is PSdZData included with E-Sys MAX?</summary><div class="answer"><p>No. PSdZData and E-Sys are BMW software. E-Sys MAX adds to the E-Sys and PSdZData you already have and finds them on your PC by itself.</p></div></details>
+    <details><summary>Do I need PSdZData Full for coding?</summary><div class="answer"><p>No. Lite is enough for coding. Full is only needed to flash (program) modules.</p></div></details>
+    <details><summary>Can I keep several PSdZData versions?</summary><div class="answer"><p>Yes. Each E-Sys version can point to its own pack. The E-Sys MAX launcher lets you pick the PSdZData for each E-Sys version.</p></div></details>
+    <details><summary>E-Sys says it cannot find a CAFD for a module. Why?</summary><div class="answer"><p>Most often the PSdZData is older than the car's I-step, so it does not know that module version yet. Use a newer pack and restart E-Sys.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Make sense of every setting</h2>
+      <p>E-Sys MAX names the settings BMW leaves as a dot. Try it free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download">{icon:download} Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>
