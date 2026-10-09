@@ -1,0 +1,78 @@
+title: E-Sys MAX compatibility: E-Sys versions, cars and cables
+description: Which E-Sys versions, BMW series, cables, ICOMs and PCs E-Sys MAX works with, what we tested, and what is not tested yet.
+crumb: Compatibility
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">Compatibility</span>
+    <h1>Will it work for me?</h1>
+    <p>What E-Sys MAX works with, what we test every release, and what is not tested yet. Updated with every release.</p>
+  </div>
+</section>
+<section class="page">
+  <div class="wrap prose">
+    <h2>E-Sys versions</h2>
+    <p>Every release is checked inside these E-Sys versions before it is published: E-Sys MAX loads, its menu and tools appear, every page of E-Sys opens, and the coding safety check covers E-Sys's Code buttons.</p>
+    <table class="data">
+      <thead><tr><th>E-Sys</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>25.10</td><td>Tested every release</td></tr>
+        <tr><td>24.06</td><td>Tested every release</td></tr>
+        <tr><td>22.10</td><td>Tested every release</td></tr>
+        <tr><td>22.06</td><td>Tested every release</td></tr>
+        <tr><td>3.40</td><td>Tested every release</td></tr>
+        <tr><td>Other versions from 3.x to 25.x</td><td>Expected to work, not on our test list</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Cars</h2>
+    <table class="data">
+      <thead><tr><th>Series</th><th>Coding with E-Sys MAX</th><th>English setting names</th></tr></thead>
+      <tbody>
+        <tr><td>BMW F series</td><td>Yes</td><td>Most settings named</td></tr>
+        <tr><td>BMW G series</td><td>Yes</td><td>Fewer names, growing with every update</td></tr>
+        <tr><td>BMW I series, MINI and Rolls-Royce on the same platforms</td><td>Yes, wherever E-Sys codes them</td><td>Depends on the module</td></tr>
+        <tr><td>BMW E series (older)</td><td>No: E-Sys does not code them</td><td>-</td></tr>
+      </tbody>
+    </table>
+    <p>Why G-series has fewer names: BMW never published names for G-series settings. See <a href="/e-sys-cheat-sheets">E-Sys cheat sheets</a>. Know a setting? Name it and send it with <b>Help improve names</b>: names we add earn you free licence time.</p>
+
+    <h2>Connection to the car</h2>
+    <table class="data">
+      <thead><tr><th>Connection</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>ENET cable (Ethernet to OBD)</td><td>Supported: the usual way</td></tr>
+        <tr><td>BMW ICOM over Ethernet (Connection via ICOM/Ethernet)</td><td>Supported since 2.0.10; tested with a simulated ICOM, not yet with a real one</td></tr>
+        <tr><td>Newer DoIP cars</td><td>Found by the car connection check; the fault scan and battery reading use the classic gateway protocol and may not reach DoIP-only cars</td></tr>
+        <tr><td>Bluetooth or Wi-Fi OBD dongles, K+DCAN cables</td><td>Not supported: E-Sys itself cannot use them</td></tr>
+      </tbody>
+    </table>
+
+    <h2>PC</h2>
+    <table class="data">
+      <thead><tr><th>PC</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>Windows 11 or 10, 64-bit, Intel or AMD processor</td><td>Supported</td></tr>
+        <tr><td>Windows on ARM (Snapdragon laptops)</td><td>Not recommended: E-Sys runs through emulation, and some USB network adapters have no ARM driver</td></tr>
+        <tr><td>Mac, or Windows in a virtual machine</td><td>Not on our test list</td></tr>
+        <tr><td>Internet</td><td>Once a week, for the licence check. Coding itself needs no internet.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Not sure?</h2>
+    <p>Try every feature free for 3 days on your own car, no card and no account. The launcher's setup check and car connection check tell you what is missing before you start.</p>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Try it on your own car</h2>
+      <p>Every feature, 3 days, no card, no account.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download">{icon:download} Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="https://t.me/EsysMaxbot">{icon:send} Ask on Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
