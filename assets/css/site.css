@@ -68,9 +68,9 @@ code, .mono { font-family: var(--mono); font-size: 0.9em; }
 .eyebrow .usflag { width: 20px; }
 
 /* Each section sits between two hairlines; the content column has a faint rail on each side (desktop). */
-.section { padding: 96px 0; border-top: 1px solid var(--line); }
+.section { padding: 64px 0; border-top: 1px solid var(--line); }
 .section.alt { background: var(--bg-2); }
-.section-head { max-width: 680px; margin-bottom: 56px; }
+.section-head { max-width: 680px; margin-bottom: 28px; }
 .section-head p { color: var(--text-2); font-size: 1.1rem; margin: 0; }
 .section-head.center { margin-left: auto; margin-right: auto; }
 .lead-in { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: end; margin-bottom: 56px; }
@@ -368,6 +368,58 @@ table.data { width: 100%; border-collapse: collapse; margin: 14px 0 20px; font-s
 table.data th, table.data td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--text-2); }
 table.data th { color: var(--text); font-weight: 600; background: var(--surface); }
 /* On phones every row becomes a card; tools/build.py copies each column title into data-label. */
+
+/* ---------------------------------------------------------------- home, compact (2026-10): numbers, tabs, short rows */
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; margin-top: 56px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--line); overflow: hidden; }
+.stats div { background: var(--surface); padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
+.stats b { font-size: 1.25rem; letter-spacing: -0.01em; color: var(--text); }
+.stats span { font-size: 0.84rem; color: var(--text-3); }
+
+.tabs { margin-top: 8px; }
+.tab-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.tab-list button { font: 600 0.9rem/1 var(--body); color: var(--text-2); background: var(--surface); border: 1px solid var(--line-2); border-radius: 999px; padding: 10px 16px; cursor: pointer; }
+.tab-list button:hover { color: var(--text); border-color: var(--text-3); }
+.tab-list button[aria-selected="true"] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+.tab-list button:focus-visible { outline: 2px solid var(--accent-2); outline-offset: 2px; }
+.tab-panel { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 32px; align-items: center; padding: 26px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); min-height: 360px; }
+.tab-panel[hidden] { display: none; }
+.tab-panel h3 { font-size: 1.35rem; margin-bottom: 4px; }
+.tab-panel .ticks { margin-top: 12px; }
+.tab-panel .shot { margin: 0; }
+.tp-cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tp-cells div { background: var(--surface); padding: 22px; display: flex; flex-direction: column; gap: 6px; min-height: 110px; justify-content: center; }
+.tp-cells b { color: var(--accent-2); font-size: 1.1rem; }
+.tp-cells span { color: var(--text-2); font-size: 0.92rem; }
+
+.steps.compact .step { padding: 18px 20px; }
+.steps.compact .step .n { margin-bottom: 10px; }
+.needs-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 24px; margin-top: 22px; padding: 14px 18px; border: 1px dashed var(--line-2); border-radius: var(--radius); color: var(--text-2); font-size: 0.92rem; }
+.needs-row .k { font: 500 0.78rem/1.6 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); }
+.needs-row span, .needs-row a { display: inline-flex; align-items: center; gap: 8px; }
+.needs-row svg { width: 16px; height: 16px; color: var(--accent-2); flex: none; }
+.fine.center { text-align: center; }
+.fine svg { width: 14px; height: 14px; vertical-align: -2px; color: var(--text-3); }
+
+.trust-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.trust-grid div { background: var(--bg-2); padding: 20px 22px; display: grid; grid-template-columns: 20px 1fr; column-gap: 12px; row-gap: 2px; align-items: start; }
+.trust-grid svg { width: 18px; height: 18px; color: var(--accent-2); grid-row: span 2; margin-top: 2px; }
+.trust-grid b { color: var(--text); font-weight: 600; }
+.trust-grid span { color: var(--text-2); font-size: 0.9rem; }
+
+@media (max-width: 980px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats div:last-child { grid-column: span 2; }
+  .tab-panel { grid-template-columns: 1fr; gap: 18px; padding: 18px; min-height: 0; }
+  .trust-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .tab-list { flex-wrap: nowrap; overflow-x: auto; margin-left: -4px; padding: 2px 4px 6px; scrollbar-width: none; }
+  .tab-list::-webkit-scrollbar { display: none; }
+  .tab-list button { flex: none; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .tp-cells div { padding: 16px; min-height: 0; }
+}
+
 @media (max-width: 760px) {
   table.data, table.data tbody, table.data tr, table.data td, table.data th { display: block; }
   table.data tr { border-bottom: 1px solid var(--line-2); padding: 10px 0; }
@@ -470,10 +522,12 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
 @media (max-width: 760px) {
   .grid-3, .grid-2, .grid-4, .pricing, .steps, .cells-4, .cells-3 { grid-template-columns: 1fr; }
   :root { --gutter: 16px; }
-  .section { padding: 64px 0; }
-  .section-head, .lead-in { margin-bottom: 40px; }
+  .section { padding: 44px 0; }
+  .section-head, .lead-in { margin-bottom: 22px; }
+  .steps.compact { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .steps.compact .step { padding: 14px; }
   .showcase { padding: 40px 0; gap: 28px; }
-  .band { padding: 64px 0; }
+  .band { padding: 44px 0; }
   .page-head { padding: 44px 0 28px; }
   .page { padding: 32px 0 64px; }
   .panel { padding: 22px 18px; }
