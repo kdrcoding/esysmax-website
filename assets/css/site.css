@@ -420,6 +420,16 @@ table.data th { color: var(--text); font-weight: 600; background: var(--surface)
   .tp-cells div { padding: 16px; min-height: 0; }
 }
 
+/* Privacy & security page: three columns of short lists. */
+.sec-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.sec-col { padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.sec-col.good { border-color: rgba(63, 214, 143, 0.35); }
+.sec-col h2 { font-size: 1.25rem; margin-bottom: 2px; }
+.sec-col .muted { color: var(--text-3); font-size: 0.9rem; margin: 0; }
+.sec-col .ticks { margin-top: 12px; font-size: 0.93rem; }
+.sec-h { font-size: 1.4rem; margin: 36px 0 14px; }
+@media (max-width: 980px) { .sec-cols { grid-template-columns: 1fr; } }
+
 @media (max-width: 760px) {
   table.data, table.data tbody, table.data tr, table.data td, table.data th { display: block; }
   table.data tr { border-bottom: 1px solid var(--line-2); padding: 10px 0; }
