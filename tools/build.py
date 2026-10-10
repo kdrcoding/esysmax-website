@@ -256,7 +256,7 @@ def structured_data(name, meta, body):
     url = SITE + ('/' if name == 'index' else '/' + name)
     graph = []
     if name == 'index':
-        graph += [ORG, WEBSITE, SOFTWARE]
+        graph += [ORG, WEBSITE, SOFTWARE, VIDEO]
     else:
         # Home > (Guides >) this page.
         trail = [('E-Sys MAX', SITE + '/')]
@@ -282,6 +282,17 @@ def structured_data(name, meta, body):
             {'@type': 'Question', 'name': text_of(q), 'acceptedAnswer': {'@type': 'Answer', 'text': text_of(a)}} for q, a in faq]})
     data = json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False, separators=(',', ':'))
     return '<script type="application/ld+json">' + data.replace('</', '<\\/') + '</script>\n'
+
+
+# The home page's tour video (assets/video, 1280x720): a VideoObject so search can show it as a video result.
+VIDEO = {
+    '@type': 'VideoObject', '@id': SITE + '/#video', 'name': 'E-Sys MAX in 50 seconds',
+    'description': 'A real screen recording of E-Sys MAX on a BMW: the launcher, coding settings in English in the E-Sys '
+                   'FDL-Editor, the fault scan with plain-English meanings and every option code of the vehicle order named.',
+    'thumbnailUrl': SITE + '/assets/img/video-poster.jpg', 'uploadDate': '2026-10-09', 'duration': 'PT51S',
+    'contentUrl': SITE + '/assets/video/e-sys-max-tour.mp4', 'embedUrl': SITE + '/#video', 'inLanguage': 'en-US',
+    'publisher': {'@id': SITE + '/#organization'},
+}
 
 
 # ---------------------------------------------------------------- pages
