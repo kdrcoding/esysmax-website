@@ -1,0 +1,119 @@
+title: BMW VO coding with E-Sys and option codes (SA codes)
+description: What VO coding is, how to add or remove an option code in the vehicle order (FA) with E-Sys, and a list of common BMW option codes with their names.
+crumb: VO coding and option codes
+type: article
+parent: guides
+published: 2026-10-09
+headline: BMW VO coding with E-Sys and BMW option codes (SA codes) list
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>BMW VO coding and option codes</h1>
+    <p>How the vehicle order works, how to add or remove an option code with E-Sys, and the codes you will meet most often.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>What is VO coding?</h2>
+    <p>Every BMW carries its <b>vehicle order</b> (German <i>Fahrzeugauftrag</i>, so <b>FA</b>; in English also <b>VO</b>). It lists how the car was built: series, type key, build date, paint and upholstery, and every factory option as a three-character <b>option code</b> (<b>SA code</b>), for example <code>5AC</code> for the high-beam assistant.</p>
+    <p>Modules read the vehicle order to decide which functions to switch on. <b>VO coding</b> means changing that list (adding or removing an option code) and then recoding the modules, so they all switch the function on or off together. It is the clean way to "retrofit" an option the hardware supports, for example after fitting a reversing camera.</p>
+    <p>Changing one setting in one module is the other way: <a href="/bmw-fdl-coding">FDL coding</a>.</p>
+
+    <h2>Step by step: add or remove an option code</h2>
+    <ol>
+      <li><b>Connect</b> with a charger on the battery, <b>Read FA</b> and save a copy of the original FA file.</li>
+      <li>Open the FA in the editor (in E-Sys: <b>Expert Mode &gt; VCM &gt; Read</b> from the car, then <b>Edit</b>).</li>
+      <li>Under <b>SALAPA</b>, add the option code (or remove it). Most codes need the leading <code>$</code>, for example <code>$5AC</code>.</li>
+      <li><b>Calculate FP</b> where your E-Sys version shows it, then <b>Save</b> and <b>Write FA</b> (and the FP) to the car.</li>
+      <li><b>Read FA</b> again and <b>Activate FA</b>, then <b>Read SVT</b>.</li>
+      <li>Select the modules the option touches and press <b>Code</b> (not "Code Default Values" unless you want every FDL change reset).</li>
+    </ol>
+    <p><b>Be careful:</b> an option code tells every module the part is there. Adding a code for hardware the car does not have can cause fault messages. Removing codes can switch functions off in modules you did not expect. Change one code at a time and keep the original FA.</p>
+
+    <h2>Common BMW option codes</h2>
+    <p>Widely documented codes on F and G-series cars. Names vary a little by model year and market; your car's own data decides.</p>
+    <table class="data">
+      <thead><tr><th>Code</th><th>Option</th></tr></thead>
+      <tbody>
+        <tr><td><code>1CC</code></td><td>Auto Start/Stop function</td></tr>
+        <tr><td><code>205</code></td><td>Automatic transmission</td></tr>
+        <tr><td><code>2TB</code></td><td>Sport automatic transmission</td></tr>
+        <tr><td><code>248</code></td><td>Heated steering wheel</td></tr>
+        <tr><td><code>249</code></td><td>Multifunction steering wheel</td></tr>
+        <tr><td><code>2VB</code></td><td>Tyre pressure monitoring</td></tr>
+        <tr><td><code>2VL</code></td><td>Variable sport steering</td></tr>
+        <tr><td><code>302</code></td><td>Alarm system</td></tr>
+        <tr><td><code>316</code></td><td>Automatic tailgate operation</td></tr>
+        <tr><td><code>322</code></td><td>Comfort access</td></tr>
+        <tr><td><code>323</code></td><td>Soft-close doors</td></tr>
+        <tr><td><code>337</code></td><td>M Sport package</td></tr>
+        <tr><td><code>3AG</code></td><td>Reversing camera</td></tr>
+        <tr><td><code>402</code></td><td>Panorama glass roof</td></tr>
+        <tr><td><code>403</code></td><td>Glass sunroof, electric</td></tr>
+        <tr><td><code>430</code></td><td>Interior and exterior mirrors with auto-dip</td></tr>
+        <tr><td><code>453</code></td><td>Active seat ventilation, front</td></tr>
+        <tr><td><code>459</code></td><td>Electric seat adjustment with memory</td></tr>
+        <tr><td><code>494</code></td><td>Seat heating, driver and front passenger</td></tr>
+        <tr><td><code>496</code></td><td>Seat heating, rear</td></tr>
+        <tr><td><code>4UR</code></td><td>Ambient light</td></tr>
+        <tr><td><code>508</code></td><td>Park Distance Control (PDC)</td></tr>
+        <tr><td><code>521</code></td><td>Rain sensor</td></tr>
+        <tr><td><code>522</code></td><td>Xenon headlights</td></tr>
+        <tr><td><code>524</code></td><td>Adaptive headlights</td></tr>
+        <tr><td><code>544</code></td><td>Cruise control with braking function</td></tr>
+        <tr><td><code>552</code></td><td>Adaptive LED headlights</td></tr>
+        <tr><td><code>563</code></td><td>Light package</td></tr>
+        <tr><td><code>5A1</code></td><td>LED fog lights</td></tr>
+        <tr><td><code>5A2</code></td><td>LED headlights</td></tr>
+        <tr><td><code>5AC</code></td><td>High-beam assistant</td></tr>
+        <tr><td><code>5AD</code></td><td>Lane departure warning</td></tr>
+        <tr><td><code>5AG</code></td><td>Lane change warning</td></tr>
+        <tr><td><code>5AS</code></td><td>Driving Assistant</td></tr>
+        <tr><td><code>5AT</code></td><td>Driving Assistant Plus</td></tr>
+        <tr><td><code>5AZ</code></td><td>BMW Laserlight</td></tr>
+        <tr><td><code>5DF</code></td><td>Active Cruise Control with Stop &amp; Go</td></tr>
+        <tr><td><code>5DL</code></td><td>Surround View</td></tr>
+        <tr><td><code>5DP</code></td><td>Park Assistant</td></tr>
+        <tr><td><code>609</code></td><td>Navigation system Professional</td></tr>
+        <tr><td><code>610</code></td><td>Head-up display</td></tr>
+        <tr><td><code>654</code></td><td>DAB tuner</td></tr>
+        <tr><td><code>655</code></td><td>Satellite radio</td></tr>
+        <tr><td><code>688</code></td><td>Harman Kardon surround sound system</td></tr>
+        <tr><td><code>6AC</code></td><td>Intelligent emergency call</td></tr>
+        <tr><td><code>6AM</code></td><td>Real Time Traffic Information</td></tr>
+        <tr><td><code>6NR</code></td><td>BMW Apps</td></tr>
+        <tr><td><code>6WB</code></td><td>Instrument cluster with extended contents</td></tr>
+        <tr><td><code>715</code></td><td>M aerodynamics package</td></tr>
+        <tr><td><code>760</code></td><td>High-gloss Shadow Line</td></tr>
+        <tr><td><code>8TN</code></td><td>Daytime running lights, adjustable in the light menu</td></tr>
+      </tbody>
+    </table>
+
+    <h2>VO coding with E-Sys MAX</h2>
+    <ul>
+      <li><b>Every option code named</b> in E-Sys's vehicle order tree, in English, also the less common ones.</li>
+      <li><b>The FA checked</b> against BMW's data for your series, so a mistyped or unknown code stands out before you write it.</li>
+      <li><b>Name a code yourself</b> when you know it, and it shows that way from then on.</li>
+      <li><b>Full backup</b> of the FA and every module's coding before you start, and coding history after.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <details><summary>VO coding or FDL coding: which one should I use?</summary><div class="answer"><p>VO coding when you add or remove a whole option (hardware fitted or removed). FDL coding for a single setting in one module. Do VO changes first: recoding from the vehicle order resets FDL changes in the modules it touches.</p></div></details>
+    <details><summary>What is the $ in front of an option code?</summary><div class="answer"><p>It marks a SALAPA option code in the FA. E-Sys's editor shows codes with it, for example <code>$5AC</code>. Type it the same way.</p></div></details>
+    <details><summary>Where can I see my car's option codes?</summary><div class="answer"><p>Read the FA with E-Sys: the SALAPA list is every option your car was built with (plus any added later). E-Sys MAX shows each one with its English name.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>Every option code, named</h2>
+      <p>E-Sys MAX names your vehicle order in English and checks it before you write. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download">{icon:download} Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>

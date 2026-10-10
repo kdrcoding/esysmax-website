@@ -458,7 +458,7 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
 
 /* ---------------------------------------------------------------- footer */
 .site-foot { border-top: 1px solid var(--line); padding: 56px 0 40px; background: var(--bg-2); color: var(--text-2); font-size: 0.92rem; }
-.foot-grid { display: grid; grid-template-columns: 1.5fr repeat(3, 1fr); gap: 32px; }
+.foot-grid { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 28px; }
 .foot-grid > div p { max-width: 340px; }
 .foot-logo { height: 28px; width: auto; margin-bottom: 16px; }
 .foot-h { font: 500 0.75rem/1 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-3); margin: 0 0 14px; }
@@ -526,6 +526,7 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
   .showcase .small { width: 100%; max-width: 480px; margin: 0; }
   .grid-3, .grid-4, .pricing, .steps, .cells-4, .cells-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-grid { grid-template-columns: 1fr 1fr; }
+  .foot-grid > div:first-child { grid-column: 1 / -1; }
   .needs { grid-template-columns: 1fr; gap: 12px; }
   .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -552,11 +553,12 @@ ol.how li::before { content: counter(n); position: absolute; left: 0; top: 0; wi
   .hint, .fine, .limit, .choice .limit, .release .d, .made-usa { font-size: 0.94rem; }
   .site-foot { font-size: 0.95rem; }
   .foot-legal { font-size: 0.88rem; }
-  .foot-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "about about" "product licence" "product legal"; gap: 18px 16px; }
+  .foot-grid { grid-template-columns: 1fr 1fr; grid-template-areas: "about about" "product guides" "licence legal"; gap: 18px 16px; }
   .foot-grid > div:first-child { grid-area: about; }
   .foot-grid > nav:nth-of-type(1) { grid-area: product; }
-  .foot-grid > nav:nth-of-type(2) { grid-area: licence; }
-  .foot-grid > nav:nth-of-type(3) { grid-area: legal; }
+  .foot-grid > nav:nth-of-type(2) { grid-area: guides; }
+  .foot-grid > nav:nth-of-type(3) { grid-area: licence; }
+  .foot-grid > nav:nth-of-type(4) { grid-area: legal; }
   .foot-grid a { line-height: 1.4; }
   .prose .caps { font-size: 0.94rem; }
 }

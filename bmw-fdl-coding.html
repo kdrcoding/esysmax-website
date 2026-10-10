@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMW FDL coding with E-Sys: CAFD, NCD and FDL-Editor</title>
+<meta name="description" content="What FDL coding is, how CAFD and NCD files fit together, how to change one setting in the E-Sys FDL-Editor, and how to undo it. With F and G-series notes.">
+<link rel="canonical" href="https://esysmax.com/bmw-fdl-coding">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preload" href="/assets/fonts/Inter-var.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/JetBrainsMono-var.woff2?v=83c005d49d" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.min.css?v=9d11718e8f">
+<meta name="theme-color" content="#0a0c10">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-Sys MAX">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="BMW FDL coding with E-Sys: CAFD, NCD and FDL-Editor">
+<meta property="og:description" content="What FDL coding is, how CAFD and NCD files fit together, how to change one setting in the E-Sys FDL-Editor, and how to undo it. With F and G-series notes.">
+<meta property="og:url" content="https://esysmax.com/bmw-fdl-coding">
+<meta property="og:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="BMW FDL coding with E-Sys: CAFD, NCD and FDL-Editor">
+<meta name="twitter:description" content="What FDL coding is, how CAFD and NCD files fit together, how to change one setting in the E-Sys FDL-Editor, and how to undo it. With F and G-series notes.">
+<meta name="twitter:image" content="https://esysmax.com/assets/img/og.png?v=d394f3b2e6">
+<meta name="twitter:image:alt" content="E-Sys MAX: BMW coding with E-Sys, in plain English">
+<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=7f6659c355">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png?v=5f744d2a0f">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=a8decb7fce">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=1c3056e059">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"E-Sys MAX","item":"https://esysmax.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://esysmax.com/guides"},{"@type":"ListItem","position":3,"name":"FDL coding","item":"https://esysmax.com/bmw-fdl-coding"}]},{"@type":"TechArticle","@id":"https://esysmax.com/bmw-fdl-coding#article","headline":"BMW FDL coding with E-Sys: CAFD, NCD and the FDL-Editor explained","description":"What FDL coding is, how CAFD and NCD files fit together, how to change one setting in the E-Sys FDL-Editor, and how to undo it. With F and G-series notes.","url":"https://esysmax.com/bmw-fdl-coding","mainEntityOfPage":"https://esysmax.com/bmw-fdl-coding","inLanguage":"en-US","datePublished":"2026-10-09","dateModified":"2026-10-09","image":"https://esysmax.com/assets/img/vehicle-order.jpg?v=14b444d8d3","author":{"@id":"https://esysmax.com/#organization"},"publisher":{"@id":"https://esysmax.com/#organization"},"about":[{"@type":"Thing","name":"BMW E-Sys"},{"@type":"Thing","name":"BMW coding"}]},{"@type":"Organization","@id":"https://esysmax.com/#organization","name":"KDR Coding","url":"https://esysmax.com/","logo":{"@type":"ImageObject","url":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","width":512,"height":512},"image":"https://esysmax.com/assets/img/icon-512.png?v=eb7fee68ac","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","url":"https://esysmax.com/contact","availableLanguage":"English"},"sameAs":["https://t.me/EsysMaxbot","https://github.com/kdrcoding","https://kdrcoding.com/"]},{"@type":"FAQPage","@id":"https://esysmax.com/bmw-fdl-coding#faq","mainEntity":[{"@type":"Question","name":"Is FDL coding the same as flashing?","acceptedAnswer":{"@type":"Answer","text":"No. Coding changes settings; flashing (programming) replaces a module's software. FDL coding is the gentler of the two and is easily undone with the saved NCD."}},{"@type":"Question","name":"My FDL change is gone after VO coding. Why?","acceptedAnswer":{"@type":"Answer","text":"VO coding and \"Code Default Values\" recode modules from the vehicle order, which puts FDL settings back to their defaults. Do VO changes first, then FDL changes. E-Sys MAX's coding history can re-apply your earlier changes."}},{"@type":"Question","name":"Can I edit the NCD file without the car?","acceptedAnswer":{"@type":"Answer","text":"You can open and edit a saved NCD with its CAFD in the FDL-Editor, but writing it needs the car connected."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="E-Sys MAX home"><picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="129px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="129" height="40" alt="E-Sys MAX"></picture></a>
+    <nav class="nav" id="site-nav" aria-label="Main"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/guides">Guides</a><a href="/licence">Licence</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-ghost btn-sm" href="/download">Free trial</a>
+      <a class="btn btn-primary btn-sm" href="/buy">Buy</a>
+    </div>
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>BMW FDL coding with E-Sys</h1>
+    <p>Changing one setting in one module: what CAFD, NCD and FDL mean, every click in the FDL-Editor, and how to go back.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>FDL coding in one minute</h2>
+    <p>Every module in an F, G or I-series BMW (head unit, body module, instrument cluster, lights, and so on) keeps its settings as coding data. <b>FDL coding</b> means changing single settings in that data with E-Sys's <b>FDL-Editor</b>, instead of changing the whole car's vehicle order. It is how most "coding" changes are made: folding mirrors on lock, the seatbelt chime, the start screen, light functions and so on.</p>
+    <p>The other way, <a href="/bmw-vo-coding">VO coding</a>, changes the vehicle order and lets every module code itself to match.</p>
+
+    <h2>CAFD, NCD and FDL</h2>
+    <table class="data">
+      <thead><tr><th>Word</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Word"><b>CAFD</b></td><td data-label="What it is">The coding description of one module: which settings exist and which values they can take. Its name has an ID and a version, for example <code>CAFD_000000F6_005_022_005</code>.</td></tr>
+        <tr><td data-label="Word"><b>NCD</b></td><td data-label="What it is">The coding data read from your car's module, saved as a file. This is what you edit and what you keep as a backup.</td></tr>
+        <tr><td data-label="Word"><b>FDL</b></td><td data-label="What it is">The list of settings (functions) inside a CAFD, shown as a tree in the FDL-Editor: group, setting, value.</td></tr>
+        <tr><td data-label="Word"><b>Werte / values</b></td><td data-label="What it is">The choices a setting can take, often <code>aktiv</code> (on) and <code>nicht_aktiv</code> (off), or numbers.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Step by step: change one setting</h2>
+    <ol>
+      <li><b>Connect</b> with an ENET cable or ICOM and a battery charger (see <a href="/e-sys-enet-icom-connection">connecting E-Sys</a>).</li>
+      <li><b>Read FA</b> and press <b>Activate FA</b>, then <b>Read SVT</b> to list the modules and their CAFDs.</li>
+      <li>Select the module and press <b>Read Coding Data</b>. E-Sys saves the NCD. <b>Keep this file</b>: it is your way back.</li>
+      <li>Expand the module, right-click its CAFD and choose <b>Edit FDL</b>. The FDL-Editor opens.</li>
+      <li>Find the setting. Right-click it and choose <b>Edit</b>, pick the new value, and save the file.</li>
+      <li>Back on the coding page, select the CAFD and press <b>Code</b> (some versions say <b>Code FDL</b>).</li>
+      <li>Switch the ignition off and on, and test. If it is not right, code the saved NCD back.</li>
+    </ol>
+    <p><b>Never press "Code Default Values"</b> unless you mean it: it resets every setting of the module to the factory default for your vehicle order, so earlier changes are lost.</p>
+
+    <h2>Why many settings show as "."</h2>
+    <p>BMW removed setting names from the data E-Sys uses. F-series modules are mostly named in older data; <b>G-series modules never were</b>, so the FDL-Editor shows long lists of dots and numbers. That is why FDL coding on G-series is hard without a <a href="/e-sys-cheat-sheets">cheat sheet</a>.</p>
+
+    <h2>FDL coding with E-Sys MAX</h2>
+    <ul>
+      <li><b>Every setting in English</b> right in the FDL-Editor, also the ones E-Sys shows as a dot, wherever a name is known.</li>
+      <li><b>What can I code?</b> lists the ready-made changes for that module and your car, what is on and what is off. One click sets the value.</li>
+      <li><b>Code several changes</b>: tick changes in several modules and code them in one go, module by module.</li>
+      <li><b>Safety check</b> before E-Sys writes: the coding file must belong to the car that is connected, and the battery voltage is shown.</li>
+      <li><b>Backups and coding history</b>: each write keeps the old NCD, and history shows exactly which settings changed and puts them back.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <details><summary>Is FDL coding the same as flashing?</summary><div class="answer"><p>No. Coding changes settings; flashing (programming) replaces a module's software. FDL coding is the gentler of the two and is easily undone with the saved NCD.</p></div></details>
+    <details><summary>My FDL change is gone after VO coding. Why?</summary><div class="answer"><p>VO coding and "Code Default Values" recode modules from the vehicle order, which puts FDL settings back to their defaults. Do VO changes first, then FDL changes. E-Sys MAX's coding history can re-apply your earlier changes.</p></div></details>
+    <details><summary>Can I edit the NCD file without the car?</summary><div class="answer"><p>You can open and edit a saved NCD with its CAFD in the FDL-Editor, but writing it needs the car connected.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>The FDL-Editor, in plain English</h2>
+      <p>E-Sys MAX names the settings, lists ready-made changes and keeps a backup of every write. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <picture><source type="image/webp" srcset="/assets/img/logo-dark.webp?v=783ed5bd3b 129w, /assets/img/logo-dark@2x.webp?v=a3b4c49ec9 258w, /assets/img/logo-dark@3x.webp?v=09cd4b793c 388w" sizes="97px"><img src="/assets/img/logo-dark@2x.png?v=416dcceacc" width="97" height="30" alt="E-Sys MAX" class="foot-logo" loading="lazy"></picture>
+        <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
+        <p class="made-usa"><svg class="usflag" viewBox="0 0 38 20" role="img" aria-label="United States flag"><rect width="38" height="20" fill="#b22234"/><path d="M0 2.3h38M0 5.4h38M0 8.5h38M0 11.5h38M0 14.6h38M0 17.7h38" stroke="#fff" stroke-width="1.54"/><rect width="15.2" height="10.8" fill="#3c3b6e"/><g fill="#fff"><circle cx="2.5" cy="2" r=".6"/><circle cx="5.5" cy="2" r=".6"/><circle cx="8.5" cy="2" r=".6"/><circle cx="11.5" cy="2" r=".6"/><circle cx="4" cy="4.2" r=".6"/><circle cx="7" cy="4.2" r=".6"/><circle cx="10" cy="4.2" r=".6"/><circle cx="13" cy="4.2" r=".6"/><circle cx="2.5" cy="6.4" r=".6"/><circle cx="5.5" cy="6.4" r=".6"/><circle cx="8.5" cy="6.4" r=".6"/><circle cx="11.5" cy="6.4" r=".6"/><circle cx="4" cy="8.6" r=".6"/><circle cx="7" cy="8.6" r=".6"/><circle cx="10" cy="8.6" r=".6"/><circle cx="13" cy="8.6" r=".6"/></g></svg><span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
+      </div>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/compatibility">Compatibility</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Guides"><p class="foot-h">E-Sys guides</p><a href="/guides">All E-Sys coding guides</a><a href="/bmw-e-sys-coding">BMW E-Sys coding</a><a href="/bmw-fdl-coding">FDL coding</a><a href="/bmw-vo-coding">VO coding &amp; option codes</a><a href="/bmw-coding-by-series">Coding by series</a><a href="/e-sys-launcher">E-Sys launcher</a><a href="/psdzdata">PSdZData</a></nav>
+      <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
+      <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/security">Privacy &amp; security</a><a href="/privacy">Privacy Policy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; <span data-year>2026</span> KDR Coding, Los Angeles, California. All rights reserved.</span>
+      <span>Vehicle coding is at your own risk. Not affiliated with BMW AG. BMW and E-Sys are trademarks of BMW AG. E-Sys and PSdZData are not included.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site.min.js?v=b6e2f9ae55" defer></script>
+</body>
+</html>

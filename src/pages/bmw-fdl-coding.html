@@ -1,0 +1,75 @@
+title: BMW FDL coding with E-Sys: CAFD, NCD and FDL-Editor
+description: What FDL coding is, how CAFD and NCD files fit together, how to change one setting in the E-Sys FDL-Editor, and how to undo it. With F and G-series notes.
+crumb: FDL coding
+type: article
+parent: guides
+published: 2026-10-09
+headline: BMW FDL coding with E-Sys: CAFD, NCD and the FDL-Editor explained
+---
+<section class="page-head">
+  <div class="wrap">
+    <span class="eyebrow">E-Sys coding guide</span>
+    <h1>BMW FDL coding with E-Sys</h1>
+    <p>Changing one setting in one module: what CAFD, NCD and FDL mean, every click in the FDL-Editor, and how to go back.</p>
+  </div>
+</section>
+<section class="page guide">
+  <div class="wrap prose">
+    <h2>FDL coding in one minute</h2>
+    <p>Every module in an F, G or I-series BMW (head unit, body module, instrument cluster, lights, and so on) keeps its settings as coding data. <b>FDL coding</b> means changing single settings in that data with E-Sys's <b>FDL-Editor</b>, instead of changing the whole car's vehicle order. It is how most "coding" changes are made: folding mirrors on lock, the seatbelt chime, the start screen, light functions and so on.</p>
+    <p>The other way, <a href="/bmw-vo-coding">VO coding</a>, changes the vehicle order and lets every module code itself to match.</p>
+
+    <h2>CAFD, NCD and FDL</h2>
+    <table class="data">
+      <thead><tr><th>Word</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><b>CAFD</b></td><td>The coding description of one module: which settings exist and which values they can take. Its name has an ID and a version, for example <code>CAFD_000000F6_005_022_005</code>.</td></tr>
+        <tr><td><b>NCD</b></td><td>The coding data read from your car's module, saved as a file. This is what you edit and what you keep as a backup.</td></tr>
+        <tr><td><b>FDL</b></td><td>The list of settings (functions) inside a CAFD, shown as a tree in the FDL-Editor: group, setting, value.</td></tr>
+        <tr><td><b>Werte / values</b></td><td>The choices a setting can take, often <code>aktiv</code> (on) and <code>nicht_aktiv</code> (off), or numbers.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Step by step: change one setting</h2>
+    <ol>
+      <li><b>Connect</b> with an ENET cable or ICOM and a battery charger (see <a href="/e-sys-enet-icom-connection">connecting E-Sys</a>).</li>
+      <li><b>Read FA</b> and press <b>Activate FA</b>, then <b>Read SVT</b> to list the modules and their CAFDs.</li>
+      <li>Select the module and press <b>Read Coding Data</b>. E-Sys saves the NCD. <b>Keep this file</b>: it is your way back.</li>
+      <li>Expand the module, right-click its CAFD and choose <b>Edit FDL</b>. The FDL-Editor opens.</li>
+      <li>Find the setting. Right-click it and choose <b>Edit</b>, pick the new value, and save the file.</li>
+      <li>Back on the coding page, select the CAFD and press <b>Code</b> (some versions say <b>Code FDL</b>).</li>
+      <li>Switch the ignition off and on, and test. If it is not right, code the saved NCD back.</li>
+    </ol>
+    <p><b>Never press "Code Default Values"</b> unless you mean it: it resets every setting of the module to the factory default for your vehicle order, so earlier changes are lost.</p>
+
+    <h2>Why many settings show as "."</h2>
+    <p>BMW removed setting names from the data E-Sys uses. F-series modules are mostly named in older data; <b>G-series modules never were</b>, so the FDL-Editor shows long lists of dots and numbers. That is why FDL coding on G-series is hard without a <a href="/e-sys-cheat-sheets">cheat sheet</a>.</p>
+
+    <h2>FDL coding with E-Sys MAX</h2>
+    <ul>
+      <li><b>Every setting in English</b> right in the FDL-Editor, also the ones E-Sys shows as a dot, wherever a name is known.</li>
+      <li><b>What can I code?</b> lists the ready-made changes for that module and your car, what is on and what is off. One click sets the value.</li>
+      <li><b>Code several changes</b>: tick changes in several modules and code them in one go, module by module.</li>
+      <li><b>Safety check</b> before E-Sys writes: the coding file must belong to the car that is connected, and the battery voltage is shown.</li>
+      <li><b>Backups and coding history</b>: each write keeps the old NCD, and history shows exactly which settings changed and puts them back.</li>
+    </ul>
+
+    <h2>Questions</h2>
+    <details><summary>Is FDL coding the same as flashing?</summary><div class="answer"><p>No. Coding changes settings; flashing (programming) replaces a module's software. FDL coding is the gentler of the two and is easily undone with the saved NCD.</p></div></details>
+    <details><summary>My FDL change is gone after VO coding. Why?</summary><div class="answer"><p>VO coding and "Code Default Values" recode modules from the vehicle order, which puts FDL settings back to their defaults. Do VO changes first, then FDL changes. E-Sys MAX's coding history can re-apply your earlier changes.</p></div></details>
+    <details><summary>Can I edit the NCD file without the car?</summary><div class="answer"><p>You can open and edit a saved NCD with its CAFD in the FDL-Editor, but writing it needs the car connected.</p></div></details>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap">
+    <div class="box reveal">
+      <span class="eyebrow">Free 3-day trial</span>
+      <h2>The FDL-Editor, in plain English</h2>
+      <p>E-Sys MAX names the settings, lists ready-made changes and keeps a backup of every write. Free for 3 days.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="/download">{icon:download} Download free trial</a>
+        <a class="btn btn-ghost btn-lg" href="/guides">More E-Sys guides</a>
+      </div>
+    </div>
+  </div>
+</section>

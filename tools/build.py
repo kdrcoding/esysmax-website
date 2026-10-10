@@ -138,7 +138,8 @@ LAYOUT = '''<!doctype html>
         <p>BMW coding with E-Sys, in plain English. Setting names, ready-made changes, backups and history: every change stays yours to approve.</p>
         <p class="made-usa">''' + USFLAG + '''<span>Made in the USA by KDR Coding, Los Angeles, California. Prices in US dollars.</span></p>
       </div>
-      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/compatibility">Compatibility</a><a href="/guides">E-Sys coding guides</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Product"><p class="foot-h">Product</p><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#trust">Safety &amp; privacy</a><a href="/#pricing">Pricing</a><a href="/#faq">FAQ</a><a href="/download">Download</a><a href="/compatibility">Compatibility</a><a href="/guide">Quick Start Guide</a><a href="/assets/E-Sys-MAX-Quick-Start-Guide.pdf">Guide (PDF)</a></nav>
+      <nav aria-label="Guides"><p class="foot-h">E-Sys guides</p><a href="/guides">All E-Sys coding guides</a><a href="/bmw-e-sys-coding">BMW E-Sys coding</a><a href="/bmw-fdl-coding">FDL coding</a><a href="/bmw-vo-coding">VO coding &amp; option codes</a><a href="/bmw-coding-by-series">Coding by series</a><a href="/e-sys-launcher">E-Sys launcher</a><a href="/psdzdata">PSdZData</a></nav>
       <nav aria-label="Licence"><p class="foot-h">Licence</p><a href="/buy">Buy a licence</a><a href="/licence">Activate &amp; find my licence</a><a href="/licence#move">New PC</a><a href="https://t.me/EsysMaxbot">@EsysMaxbot on Telegram</a></nav>
       <nav aria-label="Legal"><p class="foot-h">Legal</p><a href="/terms">Terms &amp; licence</a><a href="/security">Privacy &amp; security</a><a href="/privacy">Privacy Policy</a><a href="/refunds">Refunds</a><a href="/disclaimer">Coding disclaimer</a><a href="/contact">Contact</a></nav>
     </div>
@@ -223,13 +224,14 @@ ORG = {
     'image': SITE + '/assets/img/icon-512.png',
     'address': {'@type': 'PostalAddress', 'addressLocality': 'Los Angeles', 'addressRegion': 'CA', 'addressCountry': 'US'},
     'contactPoint': {'@type': 'ContactPoint', 'contactType': 'customer support', 'url': SITE + '/contact', 'availableLanguage': 'English'},
-    'sameAs': ['https://t.me/EsysMaxbot'],
+    'sameAs': ['https://t.me/EsysMaxbot', 'https://github.com/kdrcoding', 'https://kdrcoding.com/'],
 }
 # name and alternateName: the site name Google shows above the result (see "site names" in Google's documentation).
-WEBSITE = {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'E-Sys MAX', 'alternateName': ['EsysMax', 'ESys MAX'],
+WEBSITE = {'@type': 'WebSite', '@id': SITE + '/#website', 'name': 'E-Sys MAX', 'alternateName': ['EsysMax', 'ESys MAX', 'Esys Max', 'E Sys MAX'],
            'url': SITE + '/', 'inLanguage': 'en-US', 'publisher': {'@id': SITE + '/#organization'}}
 SOFTWARE = {
     '@type': 'SoftwareApplication', '@id': SITE + '/#software', 'name': 'E-Sys MAX', 'url': SITE + '/',
+    'alternateName': ['EsysMax', 'ESys MAX', 'E-Sys MAX launcher'],
     'description': 'A Windows add-on and launcher for BMW E-Sys: English names for coding settings, ready-made coding changes, '
                    'a vehicle order helper, fault scan, full backups and coding history. E-Sys itself is not included.',
     'applicationCategory': 'UtilitiesApplication', 'operatingSystem': 'Windows 10, Windows 11',
