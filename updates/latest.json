@@ -1,9 +1,9 @@
 {
   "product": "E-Sys MAX",
-  "version": "2.0.10",
-  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.10/E-Sys-Max-2.0.10-win-x64.msi",
-  "sha256": "AA8D4DBA0A00B7F55A3864CEBD8A1D2D4E4C4F7678BAB42521BD48401D4C30D1",
+  "version": "2.0.11",
+  "installer": "https://github.com/kdrcoding/esysmax-website/releases/download/v2.0.11/E-Sys-Max-2.0.11-win-x64.msi",
+  "sha256": "677A8D39BC005BC89E0FEEBF4C0CC157AA82F43285BED8F00579B81D907C3717",
   "size": 59204805,
-  "notes": "ICOM support: when E-Sys is connected through an ICOM, the fault scan, full backup and module info reach the car through it, and the battery reads on a click. The car connection check tests the ICOM and finds DoIP cars. Honest G-series names note in the CAFD editor. Names and helpful problem reports earn free licence time.",
-  "published": "2026-10-09"
+  "notes": "## New\n- What can I code? fits more: on a laptop screen the list now shows about ten ready-made changes, one line each, and folds away what you do not need while it is small.\n- What\u0027s new window: release notes in sections (New, Better, Fixed), with Update now right there.\n\n## Better\n- Fault scan: waits for the battery reading to finish before it starts, so the two no longer get in each other\u0027s way.\n\n## Fixed\n- Fault scan sometimes stopped with \u0022Connection reset\u0022: when the car\u0027s gateway is busy for a moment, it now tries again by itself (up to 3 times).",
+  "published": "2026-10-10"
 }
