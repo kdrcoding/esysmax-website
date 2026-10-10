@@ -81,6 +81,12 @@ main::before { left: calc(50% - var(--max) / 2); }
 main::after { right: calc(50% - var(--max) / 2); }
 main > * { position: relative; z-index: 1; }
 
+/* ---------------------------------------------------------------- notice: one line above the header, scrolls away */
+.notice { background: var(--accent-soft); border-bottom: 1px solid var(--line); color: var(--text-2); font-size: 0.86rem; line-height: 1.45; }
+.notice .wrap { padding-top: 9px; padding-bottom: 9px; text-align: center; }
+.notice a { color: var(--accent-2); font-weight: 600; white-space: nowrap; margin-left: 4px; }
+.notice a:hover { text-decoration: underline; }
+
 /* ---------------------------------------------------------------- header */
 .site-head {
   position: sticky; top: 0; z-index: 50;

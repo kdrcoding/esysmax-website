@@ -116,6 +116,7 @@ LAYOUT = '''<!doctype html>
 {jsonld}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="notice"><div class="wrap">We are working on the next update: more setting names and features for G-series cars are on the way. <a href="/compatibility">What works today</a></div></div>
 <header class="site-head">
   <div class="wrap">
     <a class="brand" href="/" aria-label="E-Sys MAX home">{logo_head}</a>
